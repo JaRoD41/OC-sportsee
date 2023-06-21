@@ -8,8 +8,9 @@
 
 > Projet 12 - Développez un tableau de bord d'analytics avec React
 
-**Maquette Desktop**
-https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?type=design&node-id=0-1&t=jZXIEGzWl1maPfIJ-0
+<p align="center">
+  <img src="https://github.com/JaRoD41/OC-sportsee/blob/main/Sportsee.png?raw=true">
+</p>
 
 > PROBLEMATIQUE
 
