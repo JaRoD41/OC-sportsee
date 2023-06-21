@@ -1,0 +1,10 @@
+.logo-container {
+    position: relative;
+    width: 178px;
+    height: 61px;
+    margin-left: 28px;
+
+    @media screen and ($breakpoint-desktop <= width <= 1280px) {
+			@include font(16px, 400);
+		}
+}

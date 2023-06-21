@@ -1,0 +1,22 @@
+.horizontal_links {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 69%;
+	height: 24px;
+    margin-right: 6%;
+
+	& a {
+		@include font(24px, 500);
+		color: white;
+		text-decoration: none;
+		&:hover {
+			color: $gray-font-color;
+		}
+
+		@media screen and ($breakpoint-desktop <= width <= 1280px) {
+			@include font(16px, 400);
+		}
+	}
+}

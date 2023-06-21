@@ -1,4 +1,5 @@
 @import './Utils/variables';
+@import './Utils/mixins';
 
 @import './Base/base';
 
@@ -7,6 +8,7 @@
 @import "../components/Glucids/Glucids";
 @import "../components/Header/Header";
 @import "../components/HorizontalNav/HorizontalNav";
+@import "../components/HorizontalNavLinks/HorizontalNavLinks";
 @import "../components/Lipids/Lipids";
 @import "../components/Logo/Logo";
 @import "../components/Proteins/Proteins";
