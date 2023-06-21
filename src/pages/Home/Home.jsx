@@ -1,9 +1,12 @@
 import React from 'react'
+import DailyActivity from '../../components/DailyActivity/DailyActivity'
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
+	return (
+		<>
+			<DailyActivity />
+		</>
+	)
 }
 
 export default Home
