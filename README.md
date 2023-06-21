@@ -15,6 +15,14 @@ https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?type=des
 
 SportSee est une startup dédiée au coaching sportif. En pleine croissance, l’entreprise va aujourd’hui lancer une nouvelle version de la page profil de l’utilisateur. Cette page va notamment permettre à l’utilisateur de suivre le nombre de sessions réalisées ainsi que le nombre de calories brûlées.
 
+## 💻 Technos:
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=sass,react,figma,d3,github,html,js,nodejs,npm,postman,docker,vercel,vscode" />
+  </a>
+</p>
+
 ## Livrables
 
 - Un document TXT contenant le lien vers le code GitHub
