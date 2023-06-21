@@ -1,3 +1,16 @@
 @import './Utils/variables';
 
 @import './Base/base';
+
+@import '../components/Calories/Calories';
+@import '../components/DailyActivity/DailyActivity';
+@import "../components/Glucids/Glucids";
+@import "../components/Header/Header";
+@import "../components/HorizontalNav/HorizontalNav";
+@import "../components/Lipids/Lipids";
+@import "../components/Logo/Logo";
+@import "../components/Proteins/Proteins";
+@import "../components/Radar/Radar";
+@import "../components/Score/Score";
+@import "../components/SessionLength/SessionLength";
+@import "../components/VerticalNav/VerticalNav";

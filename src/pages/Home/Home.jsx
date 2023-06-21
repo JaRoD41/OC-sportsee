@@ -1,10 +1,10 @@
 import React from 'react'
-import DailyActivity from '../../components/DailyActivity/DailyActivity'
+import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 
 const Home = () => {
 	return (
 		<>
-			<DailyActivity />
+			<HorizontalNav />
 		</>
 	)
 }
