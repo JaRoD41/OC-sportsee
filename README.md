@@ -19,7 +19,7 @@ SportSee est une startup dédiée au coaching sportif. En pleine croissance, l�
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=sass,react,figma,d3,github,html,js,nodejs,npm,postman,docker,vercel,vscode" />
+    <img src="https://skillicons.dev/icons?i=sass,react,figma,d3,github,html,js,nodejs,postman,docker,vercel,vscode" />
   </a>
 </p>
 
