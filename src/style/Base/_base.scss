@@ -10,3 +10,8 @@
 	box-sizing: inherit;
 	font-family: 'Roboto', sans-serif;
 }
+
+body {
+	box-sizing: border-box;
+	min-width: $breakpoint-desktop;
+}
