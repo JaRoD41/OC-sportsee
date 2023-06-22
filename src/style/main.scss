@@ -4,7 +4,9 @@
 @import './Base/base';
 
 @import '../components/Calories/Calories';
+@import '../components/ChartsZone/ChartsZone';
 @import '../components/DailyActivity/DailyActivity';
+@import '../components/Dashboard/Dashboard';
 @import "../components/Glucids/Glucids";
 @import "../components/Header/Header";
 @import "../components/HorizontalNav/HorizontalNav";
@@ -12,6 +14,7 @@
 @import "../components/Lipids/Lipids";
 @import "../components/Logo/Logo";
 @import "../components/NavButton/NavButton";
+@import "../components/NutritionZone/NutritionZone";
 @import "../components/Proteins/Proteins";
 @import "../components/Radar/Radar";
 @import "../components/Score/Score";
