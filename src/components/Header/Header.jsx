@@ -3,10 +3,10 @@ import React from 'react'
 export default function Header() {
   const user = "Thomas"
   return (
-		<header className="title_container">
+		<div className="title_container">
 			<h1 className="hearder_hello">Bonjour</h1>
 			<h2 className="header_user">{user}</h2>
-			<p className="congrats">Félicitaions ! Vous avez explosé vos objectifs, hier 👏</p>
-		</header>
+			<p className="congrats">Félicitations ! Vous avez explosé vos objectifs, hier 👏</p>
+		</div>
 	)
 }

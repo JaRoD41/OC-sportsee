@@ -4,3 +4,9 @@
 	font-weight: $weight;
 	line-height: $size;
 }
+
+@mixin button-color($color) {
+	background-color: $color;
+	opacity: 0.1;
+	border: none;
+}

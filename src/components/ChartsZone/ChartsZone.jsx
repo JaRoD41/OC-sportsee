@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function ChartsZone() {
   return (
-    <div>ChartsZone</div>
+    <section className='chartsZone_container'>
+      <div>chartsZone</div>
+    </section>
   )
 }
