@@ -6,8 +6,8 @@ import Dashboard from '../../components/Dashboard/Dashboard'
 const Home = () => {
 	return (
 		<>
-			{/* <HorizontalNav /> */}
-			{/* <VerticalNav /> */}
+			<HorizontalNav />
+			<VerticalNav />
 			<Dashboard />
 		</>
 	)

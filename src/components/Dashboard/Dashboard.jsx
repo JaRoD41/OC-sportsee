@@ -6,12 +6,12 @@ import Header from '../../components/Header/Header'
 
 export default function Dashboard() {
   return (
-		<>
+		<main className='dashboard-container'>
       <Header />
-			<section className="dashboard_metrics">
+			<section className="dashboard-metrics">
 				<ChartsZone />
 				<NutritionZone />
 			</section>
-		</>
+		</main>
 	)
 }

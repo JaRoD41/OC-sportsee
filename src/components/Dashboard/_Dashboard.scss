@@ -1,4 +1,11 @@
-.dashboard_metrics {
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 14rem;
+    padding-top: 8rem;
+}
+
+.dashboard-metrics {
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -8,7 +8,7 @@
     margin-right: 6%;
 
 	& a {
-		@include font(24px, 500);
+		@include font(1.5rem, 500);
 		color: white;
 		text-decoration: none;
 		&:hover {
@@ -16,7 +16,7 @@
 		}
 
 		@media screen and ($breakpoint-desktop <= width <= 1280px) {
-			@include font(16px, 400);
+			@include font(1rem, 400);
 		}
 	}
 }

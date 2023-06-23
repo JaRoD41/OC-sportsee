@@ -5,7 +5,7 @@ export default function Proteins() {
 	const proteinCount = 155
 	return (
 		<article className="nutrition-card">
-			<div className="nutrition-card_button button-red">
+			<div className="nutrition-card_button button-blue">
 				<img src={proteins} alt="proteins" />
 			</div>
 			<div className="nutrition-card_content">

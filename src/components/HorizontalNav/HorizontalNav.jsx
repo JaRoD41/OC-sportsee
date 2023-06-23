@@ -5,10 +5,10 @@ import HorizontalNavLinks from '../HorizontalNavLinks/HorizontalNavLinks'
 export default function HorizontalNav() {
 	return (
 		<>
-			<section className="horizontalContainer">
+			<nav className="horizontalContainer">
 				<Logo />
 				<HorizontalNavLinks />
-			</section>
+			</nav>
 		</>
 	)
 }

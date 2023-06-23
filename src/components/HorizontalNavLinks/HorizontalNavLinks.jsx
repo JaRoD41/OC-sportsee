@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function HorizontalNavLinks() {
   return (
 		<>
-			<nav className="horizontal_links">
+			<div className="horizontal_links">
 				<Link to="/" className="horizontal_link">
 					Accueil
 				</Link>
@@ -17,7 +17,7 @@ export default function HorizontalNavLinks() {
 				<Link to="/" className="horizontal_link">
 					Communauté
 				</Link>
-			</nav>
+			</div>
 		</>
 	)
 }
