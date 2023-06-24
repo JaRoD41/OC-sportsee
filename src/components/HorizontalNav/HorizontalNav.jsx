@@ -4,11 +4,9 @@ import HorizontalNavLinks from '../HorizontalNavLinks/HorizontalNavLinks'
 
 export default function HorizontalNav() {
 	return (
-		<>
-			<nav className="horizontalContainer">
-				<Logo />
-				<HorizontalNavLinks />
-			</nav>
-		</>
+		<nav className="horizontalContainer">
+			<Logo />
+			<HorizontalNavLinks />
+		</nav>
 	)
 }
