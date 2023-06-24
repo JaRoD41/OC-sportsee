@@ -1,16 +1,14 @@
 import React from 'react'
-import Calories from '../Calories/Calories'
-import Proteins from '../Proteins/Proteins'
-import Glucids from '../Glucids/Glucids'
-import Lipids from '../Lipids/Lipids'
+import NutritionCard from '../NutritionCard/NutritionCard'
 
 export default function NutritionZone() {
+	let nutritionTypes = [ 'calories', 'proteins', 'glucids', 'lipids']
+	let amount = 290
   return (
 		<aside className="nutrition_container">
-			<Calories />
-			<Proteins />
-			<Glucids />
-			<Lipids />
+			{nutritionTypes.map((type, index) => (
+				<NutritionCard key={index} type={type} amount={amount} />
+			))}
 		</aside>
 	)
 }
