@@ -24,12 +24,14 @@ export default function NutritionCard({ type, amount }) {
 	}
 	return (
 		<article className="nutrition-card">
-			<div className="nutrition-card__button">
-				<img src={icon} alt={type} />
-			</div>
-			<div className="nutrition-card__content">
-				<h3>{amount}kCal</h3>
-				<span>Lipides</span>
+			<div className='nutrition-card-infos'>
+				<div className="nutrition-card-infos__button">
+					<img src={icon} alt={type} />
+				</div>
+				<div className="nutrition-card-infos__content">
+					<h3>{amount}kCal</h3>
+					<span>{type}</span>
+				</div>
 			</div>
 		</article>
 	)
