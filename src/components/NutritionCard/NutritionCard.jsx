@@ -4,13 +4,11 @@ import protein from '../../assets/protein-icon.svg'
 import glucid from '../../assets/glucid-icon.svg'
 import lipid from '../../assets/lipid-icon.svg'
 
-
 // Je récupère les props type et amount de NutritionZone.jsx
 export default function NutritionCard({ type, amount }) {
 	// Je déclare une variable d'état color grâce à useState
 	const [color, setColor] = useState('')
 
-	let icon = ''
 	useEffect(() => {
 		switch (type) {
 			// Selon le type de la carte, je change la couleur de l'icone
