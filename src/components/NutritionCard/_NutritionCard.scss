@@ -1,3 +1,19 @@
+.red {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.blue {
+    background-color: rgba(74, 184, 255, 0.1);
+}
+
+.yellow {
+    background-color: rgba(249, 206, 35, 0.1);
+}
+
+.pink {
+    background-color: rgba(253, 81, 129, 0.1);
+}
+
 .nutrition-card {
 	display: flex;
 	width: 258px;
@@ -13,7 +29,6 @@
     margin: auto;
 	width: 175px;
 	height: 60px;
-    border: 1px solid blue;
 
 	&__button {
 		display: flex;
@@ -22,7 +37,6 @@
 		width: 60px;
 		height: 60px;
         border-radius: 5px;
-        border: 1px solid red;
 	}
 	&__content {
 		display: flex;
