@@ -11,8 +11,6 @@
 
 #root {
 	display: flex;
-	min-width: 1024px;
-	min-height: 780px;
 }
 
 h1,
@@ -26,5 +24,7 @@ h6 {
 }
 
 main {
-	margin: 140px 90px 88px 210px
+	margin: 140px 90px 88px 210px;
+	width: 70.5rem;
+	max-width: 1440px;
 }
