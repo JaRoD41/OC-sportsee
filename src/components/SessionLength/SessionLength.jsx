@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function SessionLength() {
   return (
-    <div>SessionLength</div>
+    <div className='session-container'>SessionLength</div>
   )
 }

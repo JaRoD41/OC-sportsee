@@ -8,36 +8,37 @@ import lipid from '../../assets/lipid-icon.svg'
 export default function NutritionCard({ type, amount }) {
 	// Je déclare une variable d'état color grâce à useState
 	const [color, setColor] = useState('')
+	let iconNames = ['calory', 'protein', 'glucid', 'lipid']
 
 	useEffect(() => {
 		switch (type) {
 			// Selon le type de la carte, je change la couleur de l'icone
-			case 'calories':
+			case 'calory':
 				setColor('red')
 				// icon = calory
 				break
-			case 'proteins':
+			case 'protein':
 				setColor('blue')
 				// icon = protein
 				break
-			case 'glucids':
+			case 'glucid':
 				setColor('yellow')
 				// icon = glucid
 				break
-			case 'lipids':
+			case 'lipid':
 				setColor('pink')
 				// icon = lipid
 				break
 			default:
 				break
 		}
-		// eslint-disable-next-line
 	}, [type])
 	return (
 		<article className="nutrition-card">
 			<div className="nutrition-card-infos">
 				<div className={`nutrition-card-infos__button ${color}`}>
-					<img src={calory} alt={type} />
+				{/* A FIX URGENT  */}
+					<img src={`../../src/assets/${type}-icon.svg`} alt={type} />
 				</div>
 				<div className="nutrition-card-infos__content">
 					<h3>{amount}kCal</h3>

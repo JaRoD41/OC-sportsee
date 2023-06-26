@@ -2,15 +2,15 @@
     display: flex;
     flex-direction: column;
     padding-left: 14rem;
-    padding-top: 8rem;
+    padding-top: 4.25rem;
 }
 
 .dashboard-metrics {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 613px;
     width: 1126px;
-    border: 1px solid green;
+    margin-top: 77px;
 }

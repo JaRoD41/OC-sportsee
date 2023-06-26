@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Radar() {
   return (
-    <div>Radar</div>
+    <div className='radar-container'>Radar</div>
   )
 }

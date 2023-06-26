@@ -2,7 +2,7 @@ import React from 'react'
 import NutritionCard from '../NutritionCard/NutritionCard'
 
 export default function NutritionZone() {
-	let nutritionTypes = [ 'calories', 'proteins', 'glucids', 'lipids']
+	let nutritionTypes = [ 'calory', 'protein', 'glucid', 'lipid']
 	let amount = 290
   return (
 		<aside className="nutrition_container">
