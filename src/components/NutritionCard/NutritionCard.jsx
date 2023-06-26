@@ -8,7 +8,16 @@ import lipid from '../../assets/lipid-icon.svg'
 export default function NutritionCard({ type, amount }) {
 	// Je déclare une variable d'état color grâce à useState
 	const [color, setColor] = useState('')
-	let iconNames = ['calory', 'protein', 'glucid', 'lipid']
+	let icon = ''
+	if (type === 'calory') {
+		icon = calory
+	} else if (type === 'protein') {
+		icon = protein
+	} else if (type === 'glucid') {
+		icon = glucid
+	} else if (type === 'lipid') {
+		icon = lipid
+	}
 
 	useEffect(() => {
 		switch (type) {
@@ -37,8 +46,8 @@ export default function NutritionCard({ type, amount }) {
 		<article className="nutrition-card">
 			<div className="nutrition-card-infos">
 				<div className={`nutrition-card-infos__button ${color}`}>
-				{/* A FIX URGENT  */}
-					<img src={`../../src/assets/${type}-icon.svg`} alt={type} />
+					{/* A FIX URGENT  */}
+					<img src={icon} alt={type} />
 				</div>
 				<div className="nutrition-card-infos__content">
 					<h3>{amount}kCal</h3>
