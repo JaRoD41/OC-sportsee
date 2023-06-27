@@ -8,7 +8,9 @@ import lipid from '../../assets/lipid-icon.svg'
 export default function NutritionCard({ type, amount }) {
 	// Je déclare une variable d'état color grâce à useState
 	const [color, setColor] = useState('')
-	let icon = ''
+
+	// Je déclare une variable icon qui va changer selon le type de la carte
+	let icon
 	if (type === 'calory') {
 		icon = calory
 	} else if (type === 'protein') {
@@ -24,19 +26,15 @@ export default function NutritionCard({ type, amount }) {
 			// Selon le type de la carte, je change la couleur de l'icone
 			case 'calory':
 				setColor('red')
-				// icon = calory
 				break
 			case 'protein':
 				setColor('blue')
-				// icon = protein
 				break
 			case 'glucid':
 				setColor('yellow')
-				// icon = glucid
 				break
 			case 'lipid':
 				setColor('pink')
-				// icon = lipid
 				break
 			default:
 				break
