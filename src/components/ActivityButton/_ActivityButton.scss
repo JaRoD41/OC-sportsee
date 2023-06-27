@@ -6,4 +6,9 @@
     background-color: white;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+        border: 2px solid $primary-color;
+        background-color: lightpink;
+    }
 }

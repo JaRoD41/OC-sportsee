@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ActivityButton from '../ActivityButton/ActivityButton'
 
 export default function VerticalNavLinks() {
@@ -6,7 +7,11 @@ export default function VerticalNavLinks() {
 	return (
 		<nav className="verticalButtons-container">
 			{activities.map((activity, index) => {
-				return <ActivityButton key={index} activity={activity} />
+				return (
+					<Link key={index} to="/">
+						<ActivityButton key={index} activity={activity} />
+					</Link>
+				)
 			})}
 		</nav>
 	)

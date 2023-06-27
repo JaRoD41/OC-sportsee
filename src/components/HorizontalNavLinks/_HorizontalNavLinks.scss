@@ -12,7 +12,7 @@
 		color: white;
 		text-decoration: none;
 		&:hover {
-			color: $gray-font-color;
+			color: $primary-color;
 		}
 
 		@media screen and ($breakpoint-desktop <= width <= 1280px) {
