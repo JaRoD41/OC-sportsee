@@ -13,11 +13,9 @@
 
 .copyright {
 	display: flex;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: center;
 	color: white;
+	white-space: nowrap;
 	@include font(0.75rem, 500);
-	margin-bottom: 3.6rem;
+	margin-bottom: 6.5rem;
 	transform: rotate(-90deg);
 }

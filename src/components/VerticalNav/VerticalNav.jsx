@@ -5,7 +5,7 @@ export default function VerticalNav() {
   return (
 		<aside className="verticalContainer">
 			<VerticalNavLinks />
-			<span className="copyright">Copyright, SportSee 2023</span>
+			<p className="copyright">Copyright, SportSee 2023</p>
 		</aside>
 	)
 }
