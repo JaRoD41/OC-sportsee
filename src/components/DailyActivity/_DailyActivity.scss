@@ -8,11 +8,13 @@
 }
 
 .activityChart-title {
+    width: 9rem;
     color: $dark-blue-font-color;
     @include font(15px, 500);
     margin-top: 1.5rem;
+    margin-left: 2rem;
 }
 
-.activityChart {
-    margin: auto;
-}
+// .activityChart {
+//     margin: auto;
+// }

@@ -92,8 +92,8 @@ export default function DailyActivity() {
 					data={data}
 					margin={{
 						top: 20,
-						right: 30,
-						left: 20,
+						right: 5,
+						left: 10,
 						bottom: 5,
 					}}
 				>
