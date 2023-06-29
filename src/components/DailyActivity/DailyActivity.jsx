@@ -100,7 +100,7 @@ export default function DailyActivity() {
 					<CartesianGrid strokeDasharray="3 2" stroke="#dedede" vertical={false} />
 					<XAxis dataKey="day" stroke="#9B9EAC" />
 					<YAxis yAxisId="left" orientation="left" stroke="#8884d8" hide={true} />
-					<YAxis yAxisId="right" orientation="right" stroke="#9B9EAC" />
+					<YAxis yAxisId="right" orientation="right" stroke="#9B9EAC" domain={[75, 81]} />
 					<Tooltip />
 					<Legend />
 					<Bar yAxisId="left" dataKey="calories" fill="#282d30" />
