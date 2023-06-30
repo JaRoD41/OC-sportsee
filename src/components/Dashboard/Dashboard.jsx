@@ -9,13 +9,13 @@ import ActivityModel from '../../services/ActivityModel'
 export default function Dashboard() {
 	const user = 'Thomas'
 	const data = userData.USER_ACTIVITY[0]
-	console.log(userData.USER_ACTIVITY[0]);
-	
+	console.log(userData.USER_ACTIVITY[0])
+
 	const formatedData = new ActivityModel(data)
-	const activity = formatedData.getSessions()
+	const sessions = formatedData.getSessions()
 	const kilogram = formatedData.getKilogram()
-	console.log(activity);
-	console.log(kilogram);
+	console.log(sessions)
+	console.log(kilogram)
 	return (
 		<main className="dashboard-container">
 			<section className="dashboard-header">
@@ -26,7 +26,7 @@ export default function Dashboard() {
 				<p className="dashboard-header__user-congrats">Félicitations ! Vous avez explosé vos objectifs, hier 👏</p>
 			</section>
 			<section className="dashboard-metrics">
-				<ChartsZone />
+				<ChartsZone activitySessions={sessions} />
 				<NutritionZone />
 			</section>
 		</main>

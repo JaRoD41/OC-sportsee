@@ -4,11 +4,11 @@ import SessionLength from '../SessionLength/SessionLength'
 import Radar from '../Radar/Radar'
 import Score from '../Score/Score'
 
-export default function ChartsZone() {
+export default function ChartsZone({ activitySessions }) {
 	return (
 		<section className="chartsZone-container">
 			<article className="bigChart-container">
-				<DailyActivity />
+				<DailyActivity sessions={activitySessions} />
 			</article>
 			<article className="littleCharts-container">
 				<SessionLength />

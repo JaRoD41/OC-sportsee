@@ -81,7 +81,8 @@ const data = [
 	},
 ]
 
-export default function DailyActivity() {
+export default function DailyActivity({ sessions }) {
+	console.log('sessions props dans DailyActivity :', sessions)
 	return (
 		<div className="activity-container">
 			<h2 className="activityChart-title">Activité quotidienne</h2>
@@ -89,7 +90,7 @@ export default function DailyActivity() {
 				<BarChart
 					width={500}
 					height={300}
-					data={data}
+					data={sessions}
 					margin={{
 						top: 20,
 						right: 5,
