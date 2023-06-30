@@ -13,7 +13,9 @@ export default function Dashboard() {
 	
 	const formatedData = new ActivityModel(data)
 	const activity = formatedData.getSessions()
+	const kilogram = formatedData.getKilogram()
 	console.log(activity);
+	console.log(kilogram);
 	return (
 		<main className="dashboard-container">
 			<section className="dashboard-header">
