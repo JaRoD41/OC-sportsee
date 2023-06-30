@@ -82,6 +82,7 @@ const data = [
 ]
 
 export default function DailyActivity({ sessions }) {
+	// LOG DES PROPS SESSIONS OK
 	console.log('sessions props dans DailyActivity :', sessions)
 	return (
 		<div className="activity-container">
