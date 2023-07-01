@@ -105,8 +105,8 @@ export default function DailyActivity({ sessions }) {
 					<YAxis yAxisId="right" orientation="right" stroke="#9B9EAC" domain={[75, 81]} />
 					<Tooltip />
 					<Legend />
-					<Bar yAxisId="left" dataKey="calories" fill="#282d30" />
-					<Bar yAxisId="right" dataKey="kilogram" fill="#eb0000" />
+					<Bar yAxisId="left" dataKey="calories" fill="#282d30" barSize={7} radius={[50, 50, 0, 0]} />
+					<Bar yAxisId="right" dataKey="kilogram" fill="#eb0000" barSize={7} radius={[50, 50, 0, 0]} />
 				</BarChart>
 			</ResponsiveContainer>
 		</div>
