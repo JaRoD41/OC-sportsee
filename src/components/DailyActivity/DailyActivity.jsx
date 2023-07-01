@@ -86,7 +86,10 @@ export default function DailyActivity({ sessions }) {
 	console.log('sessions props dans DailyActivity :', sessions)
 	return (
 		<div className="activity-container">
-			<h2 className="activityChart-title">Activité quotidienne</h2>
+			<div className="chartHeader">
+				<h2 className="chartHeader__title">Activité quotidienne</h2>
+				<div className="chartHeader__details"></div>
+			</div>
 			<ResponsiveContainer width="100%" height="100%" className={'activityChart'}>
 				<BarChart
 					width={500}
