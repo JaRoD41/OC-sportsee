@@ -3,23 +3,7 @@ import React from 'react'
 import ChartsZone from '../../components/ChartsZone/ChartsZone'
 import NutritionZone from '../../components/NutritionZone/NutritionZone'
 
-import mockedData from '../../mocked_data/mock'
-import ActivityModel from '../../services/ActivityModel'
-
-export default function Dashboard() {
-	let userId = 12
-	
-	const userData = mockedData.USER_ACTIVITY[0]
-	const allData = mockedData.USER_ACTIVITY
-	console.log('user data :', userData)
-	console.log('allData :', allData)
-
-	const user = 'Thomas'
-	const formatedData = new ActivityModel(userData)
-	const sessions = formatedData.getSessions()
-	const kilogram = formatedData.getKilogram()
-	console.log('user sessions :', sessions)
-	console.log('user weight :', kilogram)
+export default function Dashboard({ user, sessions }) {
 	return (
 		<main className="dashboard-container">
 			<section className="dashboard-header">
