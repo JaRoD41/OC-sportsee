@@ -3,19 +3,23 @@ import React from 'react'
 import ChartsZone from '../../components/ChartsZone/ChartsZone'
 import NutritionZone from '../../components/NutritionZone/NutritionZone'
 
-import userData from '../../mocked_data/mock'
+import mockedData from '../../mocked_data/mock'
 import ActivityModel from '../../services/ActivityModel'
 
 export default function Dashboard() {
-	const user = 'Thomas'
-	const data = userData.USER_ACTIVITY[0]
-	console.log(userData.USER_ACTIVITY[0])
+	let userId = 12
+	
+	const userData = mockedData.USER_ACTIVITY[0]
+	const allData = mockedData.USER_ACTIVITY
+	console.log('user data :', userData)
+	console.log('allData :', allData)
 
-	const formatedData = new ActivityModel(data)
+	const user = 'Thomas'
+	const formatedData = new ActivityModel(userData)
 	const sessions = formatedData.getSessions()
 	const kilogram = formatedData.getKilogram()
-	console.log(sessions)
-	console.log(kilogram)
+	console.log('user sessions :', sessions)
+	console.log('user weight :', kilogram)
 	return (
 		<main className="dashboard-container">
 			<section className="dashboard-header">
