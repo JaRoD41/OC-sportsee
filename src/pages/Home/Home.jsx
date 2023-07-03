@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import ActivityModel from '../../services/ActivityModel'
+import MainDataModel from '../../services/MainDataModel'
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 import Dashboard from '../../components/Dashboard/Dashboard'
@@ -9,9 +10,9 @@ import Dashboard from '../../components/Dashboard/Dashboard'
 
 const Home = () => {
 	const navigate = useNavigate()
-	// const { userId } = useParams()
-	let userId = 12
-	let user = 'Thomas'
+	const { userId } = useParams()
+
+	let user = ''
 	
 	// const userData = mockedData.USER_ACTIVITY[0]
 	// const userDataJson = JSON.stringify(userData)
@@ -24,22 +25,36 @@ const Home = () => {
 
 	// TEST
 	const [selectedUser, setSelectedUser] = useState(userId)
+	const [firstName, setFirstName] = useState('')
 	const [userSessions, setUserSessions] = useState([])
 	useEffect(() => {
 		const getData = async () => {
 			//j'ai préféré utiliser une requète AXIOS pour être prêt à la future mise en place de l'API
-			const res = await axios.get('/userActivity.json')
-			console.log('res.data :', res.data)
-			const userData = res.data.find((user) => user.userId === selectedUser)
-			console.log('user data :', userData)
-			const formatedData = new ActivityModel(userData)
-			setUserSessions(formatedData.getSessions())
-			// const kilogram = formatedData.getKilogram()
-			// console.log('user sessions :', sessions)
-			// console.log('user weight :', kilogram)
-			res.data.map(() => setSelectedUser(userData))
-			if (userData === undefined) {
-				navigate('/Error', { state: { message: "Can't get data" } }) //renvoi vers la page 404 en cas d'id d'utilisateur invalide
+			const activity = await axios.get('/userActivity.json')
+			const main = await axios.get('/userMainData.json')
+
+			console.log('Activity data :', activity.data)
+			console.log('Main data :', main.data)
+
+			// Je récupère les données d'activité de l'utilisateur
+			const userActivityData = activity.data.find(({ userId }) => userId === parseInt(selectedUser))
+			console.log('user data :', userActivityData)
+
+			const activityData = new ActivityModel(userActivityData)
+
+			// Je récupère les données principales de l'utilisateur
+			// J'utilise la méthode find() pour récupérer le prénom correspondant à l'id de l'utilisateur 
+			const userMainData = main.data.find(({ id }) => id === parseInt(selectedUser))
+			const mainData = new MainDataModel(userMainData)
+			console.log('main data :', mainData)
+			setUserSessions(activityData.getSessions())
+			setFirstName(mainData.getFirstName())
+			const kilogram = activityData.getKilogram()
+			console.log('user sessions :', userSessions)
+			console.log('user weight :', kilogram)
+			activity.data.map(() => setSelectedUser(userActivityData))
+			if (userActivityData === undefined) {
+				navigate('/Error', { state: { message: "Can't get data" } }) //renvoi vers la page Error en cas d'id d'utilisateur invalide
 			}
 		}
 		getData()
@@ -53,7 +68,7 @@ const Home = () => {
 		<>
 			<HorizontalNav />
 			<VerticalNav />
-			<Dashboard user={user} sessions={userSessions} />
+			<Dashboard user={firstName} sessions={userSessions} />
 		</>
 	)
 }
