@@ -5,22 +5,17 @@
     height: 20rem;
     border-radius: 5px;
     background-color: $tertiary-color;
-}
 
-.chartHeader {
-    display: flex;
-    flex-direction: row;
-
-    &__title {
+    & h2 {
         width: 9rem;
         color: $dark-blue-font-color;
         @include font(15px, 500);
         margin-top: 1.5rem;
         margin-left: 2rem;
     }
-
-    
 }
 
-
-
+.recharts-legend-item-text {
+    @include font(14px, 500);
+    // color: $gray-font-color;
+}
