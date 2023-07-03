@@ -17,7 +17,7 @@ export default function DailyActivity({ sessions }) {
 						bottom: 15,
 					}}
 				>
-					<CartesianGrid strokeDasharray="3 2" stroke="#dedede" vertical={false} />
+					<CartesianGrid strokeDasharray="3 3" stroke="#dedede" vertical={false} />
 					<XAxis
 						dataKey="day"
 						tickFormatter={monthTickFormatter}
