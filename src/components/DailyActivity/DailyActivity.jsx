@@ -1,4 +1,4 @@
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import { monthTickFormatter } from '../../services/ActivityModel'
 
 export default function DailyActivity({ sessions }) {
@@ -18,14 +18,7 @@ export default function DailyActivity({ sessions }) {
 					}}
 				>
 					<CartesianGrid strokeDasharray="3 3" stroke="#dedede" vertical={false} />
-					<XAxis
-						dataKey="day"
-						tickFormatter={monthTickFormatter}
-						stroke="#9B9EAC"
-						tickLine={false}
-						dy={10}
-						
-					/>
+					<XAxis dataKey="day" tickFormatter={monthTickFormatter} stroke="#9B9EAC" tickLine={false} dy={10} />
 					<YAxis yAxisId="left" orientation="left" stroke="#8884d8" hide={true} />
 					<YAxis
 						yAxisId="right"

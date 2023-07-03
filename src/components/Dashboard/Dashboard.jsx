@@ -3,7 +3,7 @@ import React from 'react'
 import ChartsZone from '../../components/ChartsZone/ChartsZone'
 import NutritionZone from '../../components/NutritionZone/NutritionZone'
 
-export default function Dashboard({ user, sessions }) {
+export default function Dashboard({ user, sessions, nutritionData }) {
 	return (
 		<main className="dashboard-container">
 			<section className="dashboard-header">
@@ -15,7 +15,7 @@ export default function Dashboard({ user, sessions }) {
 			</section>
 			<section className="dashboard-metrics">
 				<ChartsZone activitySessions={sessions} />
-				<NutritionZone />
+				<NutritionZone nutritionData={nutritionData} />
 			</section>
 		</main>
 	)

@@ -12,7 +12,6 @@ const Home = () => {
 	const navigate = useNavigate()
 	const { userId } = useParams()
 
-	let user = ''
 	
 	// const userData = mockedData.USER_ACTIVITY[0]
 	// const userDataJson = JSON.stringify(userData)
@@ -27,6 +26,7 @@ const Home = () => {
 	const [selectedUser, setSelectedUser] = useState(userId)
 	const [firstName, setFirstName] = useState('')
 	const [userSessions, setUserSessions] = useState([])
+	const [userNutritionData, setUserNutritionData] = useState([])
 	useEffect(() => {
 		const getData = async () => {
 			//j'ai préféré utiliser une requète AXIOS pour être prêt à la future mise en place de l'API
@@ -46,11 +46,10 @@ const Home = () => {
 			// J'utilise la méthode find() pour récupérer le prénom correspondant à l'id de l'utilisateur 
 			const userMainData = main.data.find(({ id }) => id === parseInt(selectedUser))
 			const mainData = new MainDataModel(userMainData)
-			console.log('main data :', mainData)
+			setUserNutritionData(mainData.getKeyData())
 			setUserSessions(activityData.getSessions())
 			setFirstName(mainData.getFirstName())
 			const kilogram = activityData.getKilogram()
-			console.log('user sessions :', userSessions)
 			console.log('user weight :', kilogram)
 			activity.data.map(() => setSelectedUser(userActivityData))
 			if (userActivityData === undefined) {
@@ -68,7 +67,7 @@ const Home = () => {
 		<>
 			<HorizontalNav />
 			<VerticalNav />
-			<Dashboard user={firstName} sessions={userSessions} />
+			<Dashboard user={firstName} sessions={userSessions} nutritionData={userNutritionData}/>
 		</>
 	)
 }

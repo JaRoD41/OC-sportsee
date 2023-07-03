@@ -1,6 +1,6 @@
 export default class ActivityModel {
 	constructor(data) {
-		this.userId = data.userId
+		// this.userId = data.userId
 		this.sessions = data.sessions
 	}
 
@@ -10,12 +10,7 @@ export default class ActivityModel {
 
 	getDates() {
 		const dates = this.sessions.map((session) => session.day)
-		const formatedDates = dates.map((date) => {
-			const dateArray = date.split('-')
-			const formatedDate = `${dateArray[2]}/${dateArray[1]}`
-			return formatedDate
-		})
-		return formatedDates
+		return dates
 	}
 
 	getKilogram() {
