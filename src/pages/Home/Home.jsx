@@ -12,7 +12,7 @@ const Home = () => {
 	// const { userId } = useParams()
 	let userId = 12
 	let user = 'Thomas'
-	let sessions = []
+	
 	// const userData = mockedData.USER_ACTIVITY[0]
 	// const userDataJson = JSON.stringify(userData)
 	// const allData = mockedData.USER_ACTIVITY
