@@ -6,10 +6,12 @@ import lipid from '../../assets/lipid-icon.svg'
 
 // Je récupère les props type et amount de NutritionZone.jsx
 export default function NutritionCard({ type, amount }) {
+	// { type, calories, proteins, carbohydrates, lipids } = props
 	// Je déclare une variable d'état color grâce à useState
 	const [color, setColor] = useState('')
 	const [unit, setUnit] = useState('')
 	const [typeName, setTypeName] = useState('')
+	const [amountValue, setAmountValue] = useState()
 
 	// Je déclare une variable icon qui va changer selon le type de la carte
 	let icon
@@ -30,26 +32,31 @@ export default function NutritionCard({ type, amount }) {
 				setColor('red')
 				setUnit('kCal')
 				setTypeName('Calories')
+				// setAmountValue({ calories })
 				break
 			case 'proteinCount':
 				setColor('blue')
 				setUnit('g')
 				setTypeName('Protéines')
+				// setAmountValue({ proteins })
 				break
 			case 'carbohydrateCount':
 				setColor('yellow')
 				setUnit('g')
 				setTypeName('Glucides')
+				// setAmountValue({ carbohydrates })
 				break
 			case 'lipidCount':
 				setColor('pink')
 				setUnit('g')
 				setTypeName('Lipides')
+				// setAmountValue({ lipids })
 				break
 			default:
 				break
 		}
-	}, [type])
+		// eslint-disable-next-line
+	}, [])
 	return (
 		<article className="nutrition-card">
 			<div className="nutrition-card-infos">
@@ -58,11 +65,12 @@ export default function NutritionCard({ type, amount }) {
 					<img src={icon} alt={type} />
 				</div>
 				<div className="nutrition-card-infos__content">
-					<h3>
+					<h3 className='amount-unit'>
+						{/* {amountValue} */}
 						{amount}
 						{unit}
 					</h3>
-					<span>{typeName}</span>
+					<span className='type-name'>{typeName}</span>
 				</div>
 			</div>
 		</article>

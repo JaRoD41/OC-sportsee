@@ -15,32 +15,43 @@
 }
 
 .nutrition-card {
-	display: flex;
-	width: 258px;
-	height: 124px;
-	border-radius: 5px;
-	background: $tertiary-color;
+    display: flex;
+    width: 258px;
+    height: 124px;
+    border-radius: 5px;
+    background: $tertiary-color;
 }
 
 .nutrition-card-infos {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
     margin: auto;
-	width: 175px;
-	height: 60px;
+    width: 175px;
+    height: 60px;
 
-	&__button {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 60px;
-		height: 60px;
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
         border-radius: 5px;
-	}
-	&__content {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         padding-left: 24px;
-	}
+    }
+}
+
+.amount-unit {
+    @include font(20px, 700);
+    color: $secondary-color;
+}
+
+.type-name {
+	@include font(14px, 500);
+	color: $gray-font-color;
 }
