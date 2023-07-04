@@ -1,76 +1,34 @@
-import { useState, useEffect } from 'react'
 import calory from '../../assets/calory-icon.svg'
 import protein from '../../assets/protein-icon.svg'
 import glucid from '../../assets/glucid-icon.svg'
 import lipid from '../../assets/lipid-icon.svg'
 
+const TYPES = {
+	calorieCount: { color: 'red', unit: 'kCal', typeName: 'Calories', icon: calory },
+	proteinCount: { color: 'blue', unit: 'g', typeName: 'Protéines', icon: protein },
+	carbohydrateCount: { color: 'yellow', unit: 'g', typeName: 'Glucides', icon: glucid },
+	lipidCount: { color: 'pink', unit: 'g', typeName: 'Lipides', icon: lipid },
+}
 // Je récupère les props type et amount de NutritionZone.jsx
 export default function NutritionCard({ type, amount }) {
 	// { type, calories, proteins, carbohydrates, lipids } = props
-	// Je déclare une variable d'état color grâce à useState
-	const [color, setColor] = useState('')
-	const [unit, setUnit] = useState('')
-	const [typeName, setTypeName] = useState('')
-	const [amountValue, setAmountValue] = useState()
+	console.log('amount :', amount)
+	const nutritionType = TYPES[type]
+	console.log('nutritionType :', nutritionType)
+	// Je déclare des variables d'état color, unit, typeName et amountValue grâce à useState
 
-	// Je déclare une variable icon qui va changer selon le type de la carte
-	let icon
-	if (type === 'calorieCount') {
-		icon = calory
-	} else if (type === 'proteinCount') {
-		icon = protein
-	} else if (type === 'carbohydrateCount') {
-		icon = glucid
-	} else if (type === 'lipidCount') {
-		icon = lipid
-	}
-
-	useEffect(() => {
-		switch (type) {
-			// Selon le type de la carte, je change la couleur de l'icone
-			case 'calorieCount':
-				setColor('red')
-				setUnit('kCal')
-				setTypeName('Calories')
-				// setAmountValue({ calories })
-				break
-			case 'proteinCount':
-				setColor('blue')
-				setUnit('g')
-				setTypeName('Protéines')
-				// setAmountValue({ proteins })
-				break
-			case 'carbohydrateCount':
-				setColor('yellow')
-				setUnit('g')
-				setTypeName('Glucides')
-				// setAmountValue({ carbohydrates })
-				break
-			case 'lipidCount':
-				setColor('pink')
-				setUnit('g')
-				setTypeName('Lipides')
-				// setAmountValue({ lipids })
-				break
-			default:
-				break
-		}
-		// eslint-disable-next-line
-	}, [])
 	return (
 		<article className="nutrition-card">
 			<div className="nutrition-card-infos">
-				<div className={`nutrition-card-infos__button ${color}`}>
-					{/* A FIX URGENT  */}
-					<img src={icon} alt={type} />
+				<div className={`nutrition-card-infos__button ${nutritionType.color}`}>
+					<img src={nutritionType.icon} alt={nutritionType} />
 				</div>
 				<div className="nutrition-card-infos__content">
-					<h3 className='amount-unit'>
-						{/* {amountValue} */}
+					<h3 className="amount-unit">
 						{amount}
-						{unit}
+						{nutritionType.unit}
 					</h3>
-					<span className='type-name'>{typeName}</span>
+					<span className="type-name">{nutritionType.typeName}</span>
 				</div>
 			</div>
 		</article>
