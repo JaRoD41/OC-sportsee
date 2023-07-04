@@ -2,7 +2,7 @@ import React from 'react'
 import NutritionCard from '../NutritionCard/NutritionCard'
 
 export default function NutritionZone({ nutritionData }) {
-	let nutritionTypes = ['calory', 'protein', 'glucid', 'lipid']
+	let nutritionTypes = ['calorieCount', 'proteinCount', 'carbohydrateCount', 'lipidCount']
 	// je dois faire un map sur nutritionData pour récupérer les types de nutriments et les passer en props à NutritionCard
 
 	
