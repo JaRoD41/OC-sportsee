@@ -19,3 +19,15 @@
     @include font(14px, 500);
     // color: $gray-font-color;
 }
+
+.custom-tooltip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include font(0.75rem, 500);
+    width: 3.5rem;
+    height: 6rem;
+    background-color: #E60000;
+    color: white;
+}

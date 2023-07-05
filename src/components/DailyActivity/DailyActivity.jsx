@@ -1,6 +1,19 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import { monthTickFormatter } from '../../services/ActivityModel'
 
+const CustomTooltip = ({ active, payload }) => {
+	if (active && payload) {
+		return (
+			<div className="custom-tooltip">
+				<p className="label">{`${payload[0].value}kg`}</p>
+				<p className="desc">{`${payload[1].value}Kcal`}</p>
+			</div>
+		)
+	}
+
+	return null
+}
+
 export default function DailyActivity({ sessions }) {
 	return (
 		<div className="activity-container">
@@ -11,14 +24,21 @@ export default function DailyActivity({ sessions }) {
 					height={300}
 					data={sessions}
 					margin={{
-						top: 10,
+						top: 0,
 						right: 10,
-						left: 15,
-						bottom: 15,
+						left: 40,
+						bottom: 20,
 					}}
 				>
 					<CartesianGrid strokeDasharray="3 3" stroke="#dedede" vertical={false} />
-					<XAxis dataKey="day" tickFormatter={monthTickFormatter} stroke="#9B9EAC" tickLine={false} dy={10} />
+					<XAxis
+						dataKey="day"
+						tickFormatter={monthTickFormatter}
+						stroke="#9B9EAC"
+						tickLine={false}
+						dy={10}
+						// scale={'point'}
+					/>
 					<YAxis yAxisId="left" orientation="left" stroke="#8884d8" hide={true} />
 					<YAxis
 						yAxisId="right"
@@ -31,7 +51,11 @@ export default function DailyActivity({ sessions }) {
 						dx={15}
 						dy={-4}
 					/>
-					<Tooltip />
+					<Tooltip
+						allowEscapeViewBox={{ x: true, y: true }}
+						content={<CustomTooltip />}
+						
+					/>
 					<Legend
 						verticalAlign="top"
 						align="right"
