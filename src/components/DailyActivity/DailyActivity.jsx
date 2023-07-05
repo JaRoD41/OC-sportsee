@@ -24,7 +24,8 @@ export default function DailyActivity({ sessions }) {
 						yAxisId="right"
 						orientation="right"
 						stroke="#9B9EAC"
-						domain={[75, 81]}
+						domain={['dataMin - 1', 'dataMax']}
+						allowDecimals={false}
 						axisLine={false}
 						tickLine={false}
 						dx={15}
