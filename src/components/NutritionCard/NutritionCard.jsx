@@ -11,7 +11,6 @@ const TYPES = {
 }
 // Je récupère les props type et amount de NutritionZone.jsx
 export default function NutritionCard({ type, amount }) {
-	// { type, calories, proteins, carbohydrates, lipids } = props
 	console.log('amount :', amount)
 	const nutritionType = TYPES[type]
 	console.log('nutritionType :', nutritionType)
