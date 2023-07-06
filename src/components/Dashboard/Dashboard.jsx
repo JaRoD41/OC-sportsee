@@ -2,8 +2,9 @@ import React from 'react'
 
 import ChartsZone from '../../components/ChartsZone/ChartsZone'
 import NutritionZone from '../../components/NutritionZone/NutritionZone'
+import { getMainData } from '../../services/Api'
 
-export default function Dashboard({ user, sessions, nutritionData }) {
+export default function Dashboard({ userId, user, sessions, nutritionData }) {
 	return (
 		<main className="dashboard-container">
 			<section className="dashboard-header">

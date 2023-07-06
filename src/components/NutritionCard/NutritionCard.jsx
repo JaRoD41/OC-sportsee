@@ -2,6 +2,9 @@ import calory from '../../assets/calory-icon.svg'
 import protein from '../../assets/protein-icon.svg'
 import glucid from '../../assets/glucid-icon.svg'
 import lipid from '../../assets/lipid-icon.svg'
+import { getMainData } from '../../services/Api'
+
+
 
 const TYPES = {
 	calorieCount: { color: 'red', unit: 'kCal', typeName: 'Calories', icon: calory },
@@ -9,6 +12,7 @@ const TYPES = {
 	carbohydrateCount: { color: 'yellow', unit: 'g', typeName: 'Glucides', icon: glucid },
 	lipidCount: { color: 'pink', unit: 'g', typeName: 'Lipides', icon: lipid },
 }
+
 // Je récupère les props type et amount de NutritionZone.jsx
 export default function NutritionCard({ type, amount }) {
 	console.log('amount :', amount)
