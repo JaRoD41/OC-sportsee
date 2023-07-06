@@ -14,7 +14,6 @@ export default function NutritionCard({ type, amount }) {
 	console.log('amount :', amount)
 	const nutritionType = TYPES[type]
 	console.log('nutritionType :', nutritionType)
-	// Je déclare des variables d'état color, unit, typeName et amountValue grâce à useState
 
 	return (
 		<article className="nutrition-card">
