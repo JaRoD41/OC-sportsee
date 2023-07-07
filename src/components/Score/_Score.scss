@@ -3,5 +3,13 @@
     width: 16rem;
     height: 16.5rem;
     border-radius: 5px;
-    background-color: greenyellow;
+    background-color: $tertiary-color;
+}
+
+.scoreLegend-container {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    color: $secondary-color;
 }

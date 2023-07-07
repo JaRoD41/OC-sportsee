@@ -2,9 +2,8 @@ import React from 'react'
 
 import ChartsZone from '../../components/ChartsZone/ChartsZone'
 import NutritionZone from '../../components/NutritionZone/NutritionZone'
-import { getMainData } from '../../services/Api'
 
-export default function Dashboard({ userId, user, sessions, nutritionData }) {
+export default function Dashboard({ user, sessions, nutritionData, todayScore }) {
 	return (
 		<main className="dashboard-container">
 			<section className="dashboard-header">
@@ -15,7 +14,7 @@ export default function Dashboard({ userId, user, sessions, nutritionData }) {
 				<p className="dashboard-header__user-congrats">Félicitations ! Vous avez explosé vos objectifs, hier 👏</p>
 			</section>
 			<section className="dashboard-metrics">
-				<ChartsZone activitySessions={sessions} />
+				<ChartsZone activitySessions={sessions} todayScore={todayScore} />
 				<NutritionZone nutritionData={nutritionData} />
 			</section>
 		</main>
