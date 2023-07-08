@@ -2,9 +2,6 @@ import React from 'react'
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts'
 
 const style = {
-	top: '50%',
-	right: 0,
-	transform: 'translate(0, -50%)',
 	lineHeight: '24px',
 	color: '$secondary-color',
 }
@@ -20,28 +17,15 @@ export default function Score({ todayScore }) {
 		},
 	]
 
-	const CustomScoreLegend = ({ active, payload }) => {
-		if (active && payload) {
-			return (
-				<div className="scoreLegend-container">
-					<div className="scoreLegend-container__scoreValue">{scoreValue}%</div>
-					<div className="scoreLegend-container__scoreText">de votre objectif</div>
-				</div>
-			)
-		}
-
-		return null
-	}
-
-
-
-
+	
 	return (
 		<div className="score-container">
+			<div className="scoreLegend-container">
+				<div className="scoreLegend-container__scoreValue">{scoreValue}%</div>
+				<div className="scoreLegend-container__scoreText">de votre objectif</div>
+			</div>
 			<ResponsiveContainer width="100%" height="100%">
 				<RadialBarChart
-					cx="50%"
-					cy="50%"
 					innerRadius="80%"
 					outerRadius="80%"
 					barSize={10}
@@ -49,13 +33,14 @@ export default function Score({ todayScore }) {
 					startAngle={90}
 					endAngle={scoreAngle}
 				>
-					<RadialBar minAngle={0} label={false} background clockWise dataKey="todayScore" />
+					{/* <RadialBar minAngle={0} label={false} background dataKey="todayScore" /> */}
+					<RadialBar cornerRadius={5} dataKey="todayScore" />
 					<Legend
-						content={CustomScoreLegend}
 						iconSize={10}
 						layout="vertical"
 						verticalAlign="middle"
 						wrapperStyle={style}
+						formatter={(value) => <span style={{ color: '#74798C' }}>{value}</span>}
 					/>
 				</RadialBarChart>
 			</ResponsiveContainer>

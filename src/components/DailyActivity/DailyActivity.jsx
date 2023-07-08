@@ -67,6 +67,7 @@ export default function DailyActivity({ sessions }) {
 							right: '2rem',
 							lineHeight: '40px',
 						}}
+						// Je fixe la couleur de la légende quelle que soit la couleur des barres
 						formatter={(value) => <span style={{ color: '#74798C' }}>{value}</span>}
 					/>
 					<Bar
