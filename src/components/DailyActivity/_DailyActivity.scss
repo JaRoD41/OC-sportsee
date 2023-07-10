@@ -10,14 +10,14 @@
         width: 9rem;
         color: $dark-blue-font-color;
         @include font(15px, 500);
-        margin-top: 1.5rem;
-        margin-left: 2rem;
+        margin-top: 0.8rem;
+        margin-left: 1.3rem;
     }
 }
 
 .recharts-legend-item-text {
     @include font(14px, 500);
-    // color: $gray-font-color;
+    color: $gray-font-color;
 }
 
 .custom-tooltip {
