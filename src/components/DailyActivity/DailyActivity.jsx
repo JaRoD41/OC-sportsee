@@ -37,7 +37,6 @@ export default function DailyActivity({ sessions }) {
 						stroke="#9B9EAC"
 						tickLine={false}
 						dy={10}
-						// scale={'point'}
 					/>
 					<YAxis yAxisId="left" orientation="left" stroke="#8884d8" hide={true} />
 					<YAxis

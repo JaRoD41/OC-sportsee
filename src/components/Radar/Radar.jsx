@@ -40,7 +40,9 @@ const data = [
 	},
 ]
 
-export default function RadarChartComponent() {
+export default function RadarChartComponent({ performanceData, performanceKind}) {
+  console.log('performanceData :', performanceData)
+	console.log('performanceKind :', performanceKind)
   return (
 		<div className="radar-container">
 			<ResponsiveContainer width="100%" height="100%">

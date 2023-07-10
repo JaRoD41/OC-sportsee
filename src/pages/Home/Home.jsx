@@ -37,71 +37,28 @@ const Home = () => {
 	const userSessions = data.activity ? data.activity.sessions : []
 	const userNutritionData = data.main ? data.main.keyData : []
 	const todayScore = data.main ? data.main.todayScore : 0
+	const performanceData = data.performance ? data.performance.data : []
+	const performanceKind = data.performance ? data.performance.kind : ''
 
 	console.log('mainData :', data.main)
 	console.log('activityData :', data.activity)
 	console.log('sessionsData :', data.sessions)
 	console.log('performanceData :', data.performance)
-	console.log('todayScore :', todayScore);
-
-	// console.log('mainTest :', mainTest)
-	// console.log('mainTest keyData:', mainTest.keyData)
-
-	// const userData = mockedData.USER_ACTIVITY[0]
-	// const userDataJson = JSON.stringify(userData)
-	// const allData = mockedData.USER_ACTIVITY
-	// const allDataJson = JSON.stringify(allData)
-
-	// console.log('allData :', allData)
-	// console.log('allDataJson :', allDataJson)
-	// console.log('userData :', userData)
-
-	// const [selectedUser, setSelectedUser] = useState(userId)
-	// const [firstName, setFirstName] = useState('')
-	// const [userSessions, setUserSessions] = useState([])
-	// const [userNutritionData, setUserNutritionData] = useState([])
-	// DEBUT TEST
-	// useEffect(() => {
-	// 	const getData = async () => {
-	// 		//j'ai préféré utiliser une requète AXIOS pour être prêt à la future mise en place de l'API
-	// 		const activity = await axios.get('/userActivity.json')
-	// 		const main = await axios.get('/userMainData.json')
-
-	// 		console.log('Activity data :', activity.data)
-	// 		console.log('Main data :', main.data)
-
-	// 		// Je récupère les données d'activité de l'utilisateur
-	// 		const userActivityData = activity.data.find(({ userId }) => userId === parseInt(selectedUser))
-	// 		console.log('user data :', userActivityData)
-
-	// 		const activityData = new ActivityModel(userActivityData)
-
-	// 		// Je récupère les données principales de l'utilisateur
-	// 		// J'utilise la méthode find() pour récupérer le prénom correspondant à l'id de l'utilisateur
-	// 		const userMainData = main.data.find(({ id }) => id === parseInt(selectedUser))
-	// 		const mainData = new MainDataModel(userMainData)
-	// 		setUserNutritionData(mainData.getKeyData())
-	// 		setUserSessions(activityData.getSessions())
-	// 		setFirstName(mainData.getFirstName())
-	// 		const kilogram = activityData.getKilogram()
-	// 		console.log('user weight :', kilogram)
-	// 		activity.data.map(() => setSelectedUser(userActivityData))
-	// 		if (userActivityData === undefined) {
-	// 			navigate('/Error', { state: { message: "Can't get data" } }) //renvoi vers la page Error en cas d'id d'utilisateur invalide
-	// 		}
-	// 	}
-	// 	getData()
-	// 	// eslint-disable-next-line
-	// }, []) // array vide du useEffect pour ne lancer qu'une seule fois
-	// FIN TEST
-
-	// const user = 'Thomas'
+	console.log('todayScore :', todayScore)
+	
 
 	return (
 		<>
 			<HorizontalNav />
 			<VerticalNav />
-			<Dashboard user={firstName} sessions={userSessions} nutritionData={userNutritionData} todayScore={todayScore}/>
+			<Dashboard
+				user={firstName}
+				sessions={userSessions}
+				nutritionData={userNutritionData}
+				todayScore={todayScore}
+				performanceKind={performanceKind}
+				performanceData={performanceData}
+			/>
 		</>
 	)
 }
