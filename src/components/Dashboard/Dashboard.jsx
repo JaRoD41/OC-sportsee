@@ -4,6 +4,7 @@ import ChartsZone from '../../components/ChartsZone/ChartsZone'
 import NutritionZone from '../../components/NutritionZone/NutritionZone'
 
 export default function Dashboard({ userId, user, sessions, nutritionData, todayScore, performanceData }) {
+	
 	return (
 		<main className="dashboard-container">
 			<section className="dashboard-header">

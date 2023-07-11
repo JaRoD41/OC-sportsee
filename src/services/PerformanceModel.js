@@ -1,54 +1,24 @@
-// export function getPerformanceDataValue(kind, data) {
-// 	let dataArray = []
-// 	for (let i = 0; i < kind.length; i++) {
-// 		dataArray = [
-// 			{
-// 				kind: kind[i],
-// 				A: data[i].value,
-// 				fullMark: 220,
-// 			},
-// 		]
-// 	}
-// 	return dataArray
-// }
-
-// constructor(data) {
-// 		this.kind = data.kind
-// 		this.data = data.data
-// 	}
-
-// 	getPerformanceData() {
-// 		return this.data
-// 	}
-
-// 	getKind() {
-// 		return this.kind
-// 	}
-
-export const getPerformanceDataValue = (userId, data) => {
+export const getPerformanceDataValue = (data) => {
+	// Je vérifie que data est bien un objet
+	if (!Array.isArray(data.data)) {
+		console.error('Invalid data: data.data is not an array')
+		return []
+	}
 	let dataArray = []
-	console.log('userId :', userId);
-	// let userData = data.find((user) => user.userId === userId)
-  // let maxDataValue = Math.max(...data.map((item) => item.value))
-	// for (let i = 0; i < kind.length; i++) {
-	// 	dataArray.push({
-	// 		kind: kind[i],
-	// 		A: data[i].value,
-	// 		fullMark: maxDataValue,
-	// 	})
-	// }
+	let kind = data.kind
+	let dataValues = data.data
+	// Je crée un tableau d'objets avec les valeurs de data.data afin de pouvoir les utiliser dans le radar chart
+	for (let i = 0; i < dataValues.length; i++) {
+		dataArray.push({
+			kind: kind[dataValues[i].kind],
+			A: dataValues[i].value,
+		})
+	}
+	// Je récupère la valeur maximale de data.data afin de pouvoir l'utiliser dans le radar chart
+	let maxDataValue = Math.max(...dataArray.map((item) => item.A))
+	for (let i = 0; i < dataArray.length; i++) {
+		// Je crée une nouvelle propriété fullMark dans chaque objet de dataArray afin de pouvoir l'utiliser dans le radar chart
+		dataArray[i].fullMark = maxDataValue
+	}
 	return dataArray
 }
-
-// export const getPerformanceDataValue = (kind, data) => {
-// 	let dataArray = []
-//   let maxDataValue = Math.max(...data.map((item) => item.value))
-// 	for (let i = 0; i < kind.length; i++) {
-// 		dataArray.push({
-// 			kind: kind[i],
-// 			A: data[i].value,
-// 			fullMark: maxDataValue,
-// 		})
-// 	}
-// 	return dataArray
-// }

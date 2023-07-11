@@ -16,7 +16,7 @@ const Home = () => {
 		sessions: null,
 		performance: null,
 	})
-	
+
 	useEffect(() => {
 		const fetchData = async () => {
 			// Je récupère les données principales de l'utilisateur en utilisant Promise.all() pour exécuter plusieurs requêtes en parallèle
@@ -39,9 +39,9 @@ const Home = () => {
 	const userSessions = data.activity ? data.activity.sessions : []
 	const userNutritionData = data.main ? data.main.keyData : []
 	const todayScore = data.main ? data.main.todayScore : 0
-	const performanceData = data.performance ? data.performance.data : []
+	// const performanceData = data.performance ? data.performance.data : []
 	const performanceDataAll = data.performance ? data.performance : []
-	const performanceKind = data.performance ? data.performance.kind : ''
+	// const performanceKind = data.performance ? data.performance.kind : ''
 
 	console.log('mainData :', data.main)
 	console.log('activityData :', data.activity)
@@ -49,22 +49,23 @@ const Home = () => {
 	console.log('performanceData :', data.performance)
 	console.log('performanceDataAll :', performanceDataAll)
 	console.log('todayScore :', todayScore)
-	
 
 	return (
-		<>
-			<HorizontalNav />
-			<VerticalNav />
-			<Dashboard
-				userId={userId}
-				user={firstName}
-				sessions={userSessions}
-				nutritionData={userNutritionData}
-				todayScore={todayScore}
-				// performanceKind={performanceKind}
-				performanceData={performanceDataAll}
-			/>
-		</>
+		data && (
+			<>
+				<HorizontalNav />
+				<VerticalNav />
+				<Dashboard
+					userId={userId}
+					user={firstName}
+					sessions={userSessions}
+					nutritionData={userNutritionData}
+					todayScore={todayScore}
+					// performanceKind={performanceKind}
+					performanceData={performanceDataAll}
+				/>
+			</>
+		)
 	)
 }
 
