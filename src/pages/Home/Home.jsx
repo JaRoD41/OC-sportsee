@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import ActivityModel from '../../services/ActivityModel'
-import MainDataModel from '../../services/MainDataModel'
+// import ActivityModel from '../../services/ActivityModel'
+// import MainDataModel from '../../services/MainDataModel'
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 import Dashboard from '../../components/Dashboard/Dashboard'
@@ -16,7 +16,7 @@ const Home = () => {
 		sessions: null,
 		performance: null,
 	})
-
+	
 	useEffect(() => {
 		const fetchData = async () => {
 			// Je récupère les données principales de l'utilisateur en utilisant Promise.all() pour exécuter plusieurs requêtes en parallèle
@@ -27,9 +27,11 @@ const Home = () => {
 				getPerformanceData(userId),
 			])
 
+			// Je mets à jour le state data avec les données récupérées
 			setData({ main, activity, sessions, performance })
 		}
 		fetchData()
+		// Je mets à jour le state data à chaque fois que l'userId change
 	}, [userId])
 
 	// Je récupère les données principales de l'utilisateur en m'assurant que le state data.main est bien rempli
@@ -38,12 +40,14 @@ const Home = () => {
 	const userNutritionData = data.main ? data.main.keyData : []
 	const todayScore = data.main ? data.main.todayScore : 0
 	const performanceData = data.performance ? data.performance.data : []
+	const performanceDataAll = data.performance ? data.performance : []
 	const performanceKind = data.performance ? data.performance.kind : ''
 
 	console.log('mainData :', data.main)
 	console.log('activityData :', data.activity)
 	console.log('sessionsData :', data.sessions)
 	console.log('performanceData :', data.performance)
+	console.log('performanceDataAll :', performanceDataAll)
 	console.log('todayScore :', todayScore)
 	
 
@@ -52,12 +56,13 @@ const Home = () => {
 			<HorizontalNav />
 			<VerticalNav />
 			<Dashboard
+				userId={userId}
 				user={firstName}
 				sessions={userSessions}
 				nutritionData={userNutritionData}
 				todayScore={todayScore}
-				performanceKind={performanceKind}
-				performanceData={performanceData}
+				// performanceKind={performanceKind}
+				performanceData={performanceDataAll}
 			/>
 		</>
 	)

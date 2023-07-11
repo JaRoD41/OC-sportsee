@@ -6,20 +6,22 @@ export const getMainData = async (userId) => {
 	return userMainData
 }
 
-export const getActivityData = async (userId) => {
+export const getActivityData = async (user) => {
 	const activity = await axios.get('/userActivity.json')
-	const userActivityData = activity.data.find(({ userId }) => userId === parseInt(userId))
+	console.log('activity dans getActivityData :', activity.data)
+	const userActivityData = activity.data.find(({ userId }) => userId === parseInt(user))
+	console.log('userActivityData dans getActivityData :', userActivityData);
 	return userActivityData
 }
 
-export const getSessionsData = async (userId) => {
+export const getSessionsData = async (user) => {
 	const sessions = await axios.get('/userAverageSessions.json')
-	const userSessionsData = sessions.data.find(({ userId }) => userId === parseInt(userId))
+	const userSessionsData = sessions.data.find(({ userId }) => userId === parseInt(user))
 	return userSessionsData
 }
 
-export const getPerformanceData = async (userId) => {
+export const getPerformanceData = async (user) => {
 	const performance = await axios.get('/userPerformance.json')
-	const userPerformanceData = performance.data.find(({ userId }) => userId === parseInt(userId))
+	const userPerformanceData = performance.data.find(({ userId }) => userId === parseInt(user))
 	return userPerformanceData
 }

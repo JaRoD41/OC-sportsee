@@ -15,6 +15,7 @@ const CustomTooltip = ({ active, payload }) => {
 }
 
 export default function DailyActivity({ sessions }) {
+	console.log('sessions dans daily :', sessions);
 	return (
 		<div className="activity-container">
 			<h2 className="chartHeader__title">Activité quotidienne</h2>

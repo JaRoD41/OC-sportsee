@@ -4,7 +4,7 @@ import SessionLength from '../SessionLength/SessionLength'
 import Radar from '../Radar/Radar'
 import Score from '../Score/Score'
 
-export default function ChartsZone({ activitySessions, todayScore, performanceKind, performanceData }) {
+export default function ChartsZone({ userId, activitySessions, todayScore, performanceKind, performanceData }) {
 	return (
 		<section className="chartsZone-container">
 			<article className="bigChart-container">
@@ -12,7 +12,7 @@ export default function ChartsZone({ activitySessions, todayScore, performanceKi
 			</article>
 			<article className="littleCharts-container">
 				<SessionLength />
-				<Radar performanceKind={performanceKind} performanceData={performanceData} />
+				<Radar userId={userId} performanceDataAll={performanceData} />
 				<Score todayScore={todayScore} />
 			</article>
 		</section>
