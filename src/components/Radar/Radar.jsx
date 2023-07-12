@@ -49,11 +49,11 @@ export default function RadarChartComponent({ performanceDataAll }) {
 	return (
 		<div className="radar-container">
 			<ResponsiveContainer width="100%" height="100%">
-				<RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-					<PolarGrid />
-					<PolarAngleAxis dataKey="kind" stroke='#FFF'/>
+				<RadarChart outerRadius="75%" data={data} margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
+					<PolarGrid radialLines={false} polarRadius={[0, 10, 27, 49, 72, 95]} />
+					<PolarAngleAxis dataKey="kind" tick={{ fill: 'white', fontSize: 12 }} />
 					{/* <PolarRadiusAxis /> */}
-					<Radar dataKey="A" stroke="#8884d8" fill="#FF0101" fillOpacity={0.7} dot={false} />
+					<Radar dataKey="A" fill="#FF0101" fillOpacity={0.7} dot={false} />
 				</RadarChart>
 			</ResponsiveContainer>
 		</div>
