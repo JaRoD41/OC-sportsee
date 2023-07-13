@@ -60,13 +60,19 @@ export default function SessionLength() {
 					data={data}
 					margin={{
 						top: 5,
-						right: 10,
-						left: 10,
+						right: 0,
+						left: 0,
 						bottom: 5,
 					}}
 				>
 					{/* <CartesianGrid strokeDasharray="3 3" /> */}
-					<XAxis dataKey="name" />
+					<XAxis
+						dataKey="name"
+						stroke="#ffffff81"
+						padding={{ left: 20, right: 20 }}
+						axisLine={false}
+						tickLine={false}
+					/>
 					{/* <YAxis /> */}
 					<Tooltip content={<CustomTooltipSessions />} />
 					{/* <Legend /> */}
