@@ -74,7 +74,8 @@ export default function SessionLength() {
 						type="natural"
 						dataKey="pv"
 						stroke="#FFF"
-						activeDot={{ stroke: 'red', strokeWidth: 2, r: 10 }}
+						strokeWidth={2}
+						activeDot={{ stroke: '#ffffff33', strokeWidth: 12, r: 5 }}
 						dot={false}
 					/>
 				</LineChart>
