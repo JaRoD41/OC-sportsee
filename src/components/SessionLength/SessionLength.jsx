@@ -60,8 +60,8 @@ export default function SessionLength() {
 					data={data}
 					margin={{
 						top: 5,
-						right: 0,
-						left: 0,
+						right: 10,
+						left: 10,
 						bottom: 5,
 					}}
 				>
