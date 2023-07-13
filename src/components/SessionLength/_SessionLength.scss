@@ -3,5 +3,17 @@
     width: 16rem;
     height: 16.5rem;
     border-radius: 5px;
-    background-color: yellowgreen;
+    background-color: #F00;
+}
+
+.custom-tooltip-sessions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    @include font(0.75rem, 500);
+    width: 3.5rem;
+    height: 2rem;
+    background-color: white;
+    color: black;
 }

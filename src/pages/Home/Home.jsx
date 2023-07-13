@@ -39,16 +39,14 @@ const Home = () => {
 	const userSessions = data.activity ? data.activity.sessions : []
 	const userNutritionData = data.main ? data.main.keyData : []
 	const todayScore = data.main ? data.main.todayScore : 0
-	// const performanceData = data.performance ? data.performance.data : []
 	const performanceDataAll = data.performance ? data.performance : []
-	// const performanceKind = data.performance ? data.performance.kind : ''
 
 	console.log('mainData :', data.main)
 	console.log('activityData :', data.activity)
 	console.log('sessionsData :', data.sessions)
 	console.log('performanceData :', data.performance)
 	console.log('performanceDataAll :', performanceDataAll)
-	console.log('todayScore :', todayScore)
+	
 
 	return (
 		data && (
@@ -61,7 +59,6 @@ const Home = () => {
 					sessions={userSessions}
 					nutritionData={userNutritionData}
 					todayScore={todayScore}
-					// performanceKind={performanceKind}
 					performanceData={performanceDataAll}
 				/>
 			</>
