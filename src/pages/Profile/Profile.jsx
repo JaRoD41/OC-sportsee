@@ -16,7 +16,7 @@ const Profile = () => {
 					<li className="userSelection__list-item">
 						<span className="userName">Karl</span>
 						<img
-							className="userSelection__list-item-btn"
+							className="userSelection__list-item__btn"
 							src={logo}
 							alt="user logo"
 							onClick={() => navigate('/user/12')}
@@ -27,7 +27,7 @@ const Profile = () => {
 						<img
 							src={logo}
 							alt="user logo"
-							className="userSelection__list-item-btn"
+							className="userSelection__list-item__btn"
 							onClick={() => navigate('/user/18')}
 						/>
 					</li>

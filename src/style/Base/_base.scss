@@ -52,8 +52,8 @@ main {
 
 
     &__title {
-        @include font(24px, 700);
-        color: $gray-font-color;
+        @include font(2rem, 700);
+        color: $primary-color;
     }
 
     &__list {
@@ -62,12 +62,23 @@ main {
         justify-content: space-around;
         align-items: center;
         width: 38rem;
-        height: 25rem;
+        height: 22rem;
 
         &-item {
             display: flex;
+            flex-direction: column;
+            width: 7rem;
+            height: 10rem;
+            justify-content: space-around;  
+            align-items: center;
             @include font(14px, 500);
             color: $gray-font-color;
+
+            &__btn {
+                width: 6rem;
+                height: 6rem;
+                opacity: 0.6;
+            }
         }
     }
 
