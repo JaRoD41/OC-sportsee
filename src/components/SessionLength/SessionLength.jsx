@@ -80,14 +80,8 @@ export default function SessionLength({ sessionLength }) {
 					}}
 				>
 					{/* <CartesianGrid strokeDasharray="3 3" /> */}
-					<XAxis
-						dataKey="day"
-						stroke="#ffffff81"
-						padding={{ left: 20, right: 20 }}
-						axisLine={false}
-						tickLine={false}
-					/>
-					{/* <YAxis /> */}
+					<XAxis dataKey="day" stroke="#ffffff81" padding={{ left: 20, right: 20 }} axisLine={false} tickLine={false} />
+					<YAxis type="number" domain={['dataMin - 10', 'dataMax']} padding={{ top: 80, bottom: 15 }} hide={true} />
 					<Tooltip content={<CustomTooltipSessions />} cursor={<CustomizedCursor />} />
 					<Legend content={renderLegend} />
 
