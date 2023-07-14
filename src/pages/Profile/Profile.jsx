@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
-import logo from '../../assets/SportSee_user_logo.png'
+import logo from '../../assets/user_btn.png'
 
 const Profile = () => {
 	const navigate = useNavigate()
