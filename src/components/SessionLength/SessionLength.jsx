@@ -63,14 +63,15 @@ const renderLegend = () => {
 
 // position={{ y: 0 }}
 // <Legend content={renderLegend} />``` et tu déclares ta fonction plus haut dans le composent avec un ``` return <p>...</p>
-export default function SessionLength() {
+export default function SessionLength({ sessionLength }) {
+	console.log('sessionLength dans le composant:', sessionLength)
 	return (
 		<div className="session-container">
 			<ResponsiveContainer width="100%" height="100%">
 				<LineChart
 					width={500}
 					height={300}
-					data={data}
+					data={sessionLength}
 					margin={{
 						top: 5,
 						right: 0,
@@ -80,7 +81,7 @@ export default function SessionLength() {
 				>
 					{/* <CartesianGrid strokeDasharray="3 3" /> */}
 					<XAxis
-						dataKey="name"
+						dataKey="day"
 						stroke="#ffffff81"
 						padding={{ left: 20, right: 20 }}
 						axisLine={false}
@@ -92,7 +93,7 @@ export default function SessionLength() {
 
 					<Line
 						type="natural"
-						dataKey="pv"
+						dataKey="sessionLength"
 						stroke="#FFF"
 						strokeWidth={2}
 						activeDot={{ stroke: '#ffffff33', strokeWidth: 12, r: 5 }}

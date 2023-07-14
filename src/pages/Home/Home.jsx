@@ -40,12 +40,14 @@ const Home = () => {
 	const userNutritionData = data.main ? data.main.keyData : []
 	const todayScore = data.main ? data.main.todayScore : 0
 	const performanceDataAll = data.performance ? data.performance : []
+	const sessionLength = data.sessions ? data.sessions.sessions : []
 
 	console.log('mainData :', data.main)
 	console.log('activityData :', data.activity)
 	console.log('sessionsData :', data.sessions)
 	console.log('performanceData :', data.performance)
 	console.log('performanceDataAll :', performanceDataAll)
+	console.log('sessionLength :', sessionLength);
 	
 
 	return (
@@ -60,6 +62,7 @@ const Home = () => {
 					nutritionData={userNutritionData}
 					todayScore={todayScore}
 					performanceData={performanceDataAll}
+					sessionLength={sessionLength}
 				/>
 			</>
 		)

@@ -28,6 +28,11 @@
 
 .sessions-custom-legend {
     color: white;
-    @include font(1.2rem, 500);
+    @include font(15px, 500);
     opacity: 0.5039569735527039;
 }
+
+// .recharts-curve .recharts-line-curve {
+//     // stroke: #F00;
+//     width: 360px;
+// }

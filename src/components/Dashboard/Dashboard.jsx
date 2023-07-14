@@ -3,7 +3,7 @@ import React from 'react'
 import ChartsZone from '../../components/ChartsZone/ChartsZone'
 import NutritionZone from '../../components/NutritionZone/NutritionZone'
 
-export default function Dashboard({ userId, user, sessions, nutritionData, todayScore, performanceData }) {
+export default function Dashboard({ userId, user, sessions, nutritionData, todayScore, performanceData, sessionLength }) {
 	
 	return (
 		<main className="dashboard-container">
@@ -19,8 +19,8 @@ export default function Dashboard({ userId, user, sessions, nutritionData, today
 					userId={userId}
 					activitySessions={sessions}
 					todayScore={todayScore}
-					// performanceKind={performanceKind}
 					performanceDataAll={performanceData}
+					sessionLength={sessionLength}
 				/>
 				<NutritionZone nutritionData={nutritionData} />
 			</section>
