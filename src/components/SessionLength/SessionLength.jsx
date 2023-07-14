@@ -28,6 +28,7 @@ const renderLegend = () => {
 export default function SessionLength({ sessionLength }) {
 	// Je récupère les données de sessionLength et je les formate avec ma fonction getWeekDays() pour pouvoir les utiliser dans le graphique
 	const formatedSessions = getWeekDays(sessionLength)
+	console.log('formatedSessions dans le composant:', formatedSessions);
 	return (
 		<div className="session-container">
 			<ResponsiveContainer width="100%" height="100%">
@@ -42,17 +43,33 @@ export default function SessionLength({ sessionLength }) {
 						bottom: 5,
 					}}
 				>
-					<XAxis dataKey="day" stroke="#ffffff81" padding={{ left: 20, right: 20 }} axisLine={false} tickLine={false} />
+				{/* Je crée un dégradé pour la ligne du graphique */}
+					<defs>
+						<linearGradient
+							id="paint0_linear_2_122"
+							x1="309.906"
+							y1="-1.97779"
+							x2="-47.7754"
+							y2="-1.97779"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="white" />
+							<stop offset="0.810441" stop-color="white" stop-opacity="0.403191" />
+						</linearGradient>
+					</defs>
+					<XAxis dataKey="day" stroke="#ffffff81" padding={{ left: -15, right: -15 }} axisLine={false} tickLine={false} />
 					<YAxis type="number" domain={['dataMin - 10', 'dataMax']} padding={{ top: 80, bottom: 15 }} hide={true} />
 					<Tooltip content={<CustomTooltipSessions />} cursor={<CustomizedCursor />} />
 					<Legend content={renderLegend} />
 					<Line
 						type="natural"
 						dataKey="sessionLength"
-						stroke="#FFF"
+						// j'utilise la couleur du dégradé pour la ligne du graphique
+						stroke="url(#paint0_linear_2_122)"
 						strokeWidth={2}
 						activeDot={{ stroke: '#ffffff33', strokeWidth: 12, r: 5 }}
 						dot={false}
+						animationEasing="ease-in-out"
 					/>
 				</LineChart>
 			</ResponsiveContainer>

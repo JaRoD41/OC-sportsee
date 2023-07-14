@@ -24,7 +24,7 @@ export const getWeekDays = (sessions) => {
 		return element
 	})
 
-	// Je boucle sur les sessions pour ajouter la propriété day modifiée en jour de la semaine
+	// Je boucle sur les sessions pour ajouter la propriété day modifiée en jour de la semaine à mon tableau formatedSessions
 	sessions.forEach((session, index) => {
 		formatedSessions.push({
 			...session,
@@ -32,5 +32,8 @@ export const getWeekDays = (sessions) => {
 		})
 	})
 
+  // Je rajoute un objet au début et à la fin de mon tableau formatedSessions pour pouvoir une ligne entière comme sur la maquette
+	formatedSessions.unshift({ day: '', sessionLength: 30 })
+	formatedSessions.push({ day: '', sessionLength: 30 })
 	return formatedSessions
 }
