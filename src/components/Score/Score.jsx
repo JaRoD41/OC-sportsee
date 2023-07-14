@@ -22,6 +22,7 @@ export default function Score({ todayScore }) {
 				<RadialBarChart
 					innerRadius="80%"
 					outerRadius="80%"
+					margin={{ top: 50 }}
 					barSize={10}
 					data={data}
 					startAngle={90}
