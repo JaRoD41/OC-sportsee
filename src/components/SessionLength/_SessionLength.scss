@@ -22,15 +22,12 @@
     position: absolute;
     width: 147px;
     height: auto;
-    left: 0px;
-    bottom: 55px;
+    left: 25px;
+    bottom: 190px;
 }
 
 .sessions-custom-legend {
-    position: absolute;
-    top: 25;
-    // height: 1.5rem;
     color: white;
-    @include font(24px, 500);
+    @include font(1.2rem, 500);
     opacity: 0.5039569735527039;
 }
