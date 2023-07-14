@@ -1,5 +1,5 @@
 import React from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Rectangle } from 'recharts'
 
 const data = [
 	{
@@ -39,17 +39,30 @@ const data = [
 	},
 ]
 
+// Je crée une fonction qui va me permettre de customiser le tooltip et d'afficher les données comme sur la maquette
 const CustomTooltipSessions = ({ active, payload }) => {
 	if (active && payload) {
 		return (
 			<div className="custom-tooltip-sessions">
-				<p className="label">{`${payload[0].value}kg`}</p>
+				<p className="label">{`${payload[0].value} min`}</p>
 			</div>
 		)
 	}
 
 	return null
 }
+
+// Je crée une fonction qui va me permettre de customiser le curseur et d'afficher une zone sombre après le dernier point
+const CustomizedCursor = ({ points }) => {
+	return <Rectangle fill="#000000" opacity={0.1} x={points[0].x} width={258} height={263} />
+}
+
+const renderLegend = () => {
+	return <p className="sessions-custom-legend">Durée moyenne des sessions</p>
+}
+
+// position={{ y: 0 }}
+// <Legend content={renderLegend} />``` et tu déclares ta fonction plus haut dans le composent avec un ``` return <p>...</p>
 export default function SessionLength() {
 	return (
 		<div className="session-container">
@@ -74,8 +87,9 @@ export default function SessionLength() {
 						tickLine={false}
 					/>
 					{/* <YAxis /> */}
-					<Tooltip content={<CustomTooltipSessions />} />
-					{/* <Legend /> */}
+					<Tooltip content={<CustomTooltipSessions />} cursor={<CustomizedCursor />} />
+					<Legend content={renderLegend} />
+
 					<Line
 						type="natural"
 						dataKey="pv"
