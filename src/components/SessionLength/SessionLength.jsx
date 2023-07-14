@@ -1,43 +1,6 @@
 import React from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Rectangle } from 'recharts'
-
-const data = [
-	{
-		name: 'L',
-		pv: 2400,
-		amt: 2400,
-	},
-	{
-		name: 'M',
-		pv: 1398,
-		amt: 2210,
-	},
-	{
-		name: 'M',
-		pv: 9800,
-		amt: 2290,
-	},
-	{
-		name: 'J',
-		pv: 3908,
-		amt: 2000,
-	},
-	{
-		name: 'V',
-		pv: 4800,
-		amt: 2181,
-	},
-	{
-		name: 'S',
-		pv: 3800,
-		amt: 2500,
-	},
-	{
-		name: 'D',
-		pv: 4300,
-		amt: 2100,
-	},
-]
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Rectangle } from 'recharts'
+import { getWeekDays } from '../../services/SessionsModel'
 
 // Je crée une fonction qui va me permettre de customiser le tooltip et d'afficher les données comme sur la maquette
 const CustomTooltipSessions = ({ active, payload }) => {
@@ -57,21 +20,21 @@ const CustomizedCursor = ({ points }) => {
 	return <Rectangle fill="#000000" opacity={0.1} x={points[0].x} width={258} height={263} />
 }
 
+// Je crée une fonction qui va me permettre de customiser la légende et d'afficher le texte comme sur la maquette
 const renderLegend = () => {
 	return <p className="sessions-custom-legend">Durée moyenne des sessions</p>
 }
 
-// position={{ y: 0 }}
-// <Legend content={renderLegend} />``` et tu déclares ta fonction plus haut dans le composent avec un ``` return <p>...</p>
 export default function SessionLength({ sessionLength }) {
-	console.log('sessionLength dans le composant:', sessionLength)
+	// Je récupère les données de sessionLength et je les formate avec ma fonction getWeekDays() pour pouvoir les utiliser dans le graphique
+	const formatedSessions = getWeekDays(sessionLength)
 	return (
 		<div className="session-container">
 			<ResponsiveContainer width="100%" height="100%">
 				<LineChart
 					width={500}
 					height={300}
-					data={sessionLength}
+					data={formatedSessions}
 					margin={{
 						top: 5,
 						right: 0,
@@ -79,12 +42,10 @@ export default function SessionLength({ sessionLength }) {
 						bottom: 5,
 					}}
 				>
-					{/* <CartesianGrid strokeDasharray="3 3" /> */}
 					<XAxis dataKey="day" stroke="#ffffff81" padding={{ left: 20, right: 20 }} axisLine={false} tickLine={false} />
 					<YAxis type="number" domain={['dataMin - 10', 'dataMax']} padding={{ top: 80, bottom: 15 }} hide={true} />
 					<Tooltip content={<CustomTooltipSessions />} cursor={<CustomizedCursor />} />
 					<Legend content={renderLegend} />
-
 					<Line
 						type="natural"
 						dataKey="sessionLength"
