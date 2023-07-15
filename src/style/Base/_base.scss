@@ -70,10 +70,6 @@ main {
             flex-direction: column;
             width: 15rem;
             height: 15rem;
-            // border-radius: 50px;
-            // background: linear-gradient(145deg, #cacaca, #f0f0f0);
-            // box-shadow: 24px 24px 48px #b8b8b8,
-            //     -24px -24px 48px #ffffff;
             border-radius: 50px;
             background: linear-gradient(145deg, #f0f0f0, #cacaca);
             box-shadow: 24px 24px 48px #b8b8b8,
@@ -88,7 +84,6 @@ main {
                 width: 6rem;
                 height: 6rem;
                 border-radius: 50%;
-                // opacity: 0.6;
 
                 &:hover {
                     -webkit-box-shadow: 0px 0px 35px 0px rgba(255, 0, 0, 0.6);
