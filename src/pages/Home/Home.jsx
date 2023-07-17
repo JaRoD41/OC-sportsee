@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 // import ActivityModel from '../../services/ActivityModel'
-// import MainDataModel from '../../services/MainDataModel'
+import MainDataModel from '../../services/MainDataModel'
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 import Dashboard from '../../components/Dashboard/Dashboard'
@@ -35,6 +35,12 @@ const Home = () => {
 	}, [userId])
 
 	// Je récupère les données principales de l'utilisateur en m'assurant que le state data.main est bien rempli
+
+	console.log('données userMainData avec getMainData() :', data.main)
+	console.log('activityData :', data.activity)
+	console.log('sessionsData :', data.sessions)
+	console.log('performanceData :', data.performance)
+
 	const firstName = data.main ? data.main.userInfos.firstName : ''
 	const userSessions = data.activity ? data.activity.sessions : []
 	const userNutritionData = data.main ? data.main.keyData : []
@@ -42,13 +48,8 @@ const Home = () => {
 	const performanceDataAll = data.performance ? data.performance : []
 	const sessionLength = data.sessions ? data.sessions.sessions : []
 
-	console.log('mainData :', data.main)
-	console.log('activityData :', data.activity)
-	console.log('sessionsData :', data.sessions)
-	console.log('performanceData :', data.performance)
 	console.log('performanceDataAll :', performanceDataAll)
-	console.log('sessionLength :', sessionLength);
-	
+	console.log('sessionLength :', sessionLength)
 
 	return (
 		data && (

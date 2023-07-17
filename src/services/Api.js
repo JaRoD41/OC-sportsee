@@ -1,35 +1,41 @@
 import axios from 'axios'
-let mainDataUrl = '/userMainData.json'
-let activityDataUrl = '/userActivity.json'
-let sessionsDataUrl = '/userAverageSessions.json'
-let performanceDataUrl = '/userPerformance.json'
 
 export const getMainData = async (userId) => {
-	// const main = await axios.get('/userMainData.json')
-	const main = await axios.get(mainDataUrl)
-	const userMainData = main.data.find(({ id }) => id === parseInt(userId))
+	// Je précise l'url de l'API pour récupérer les données principales de l'utilisateur
+	let mainDataUrl = `http://localhost:3000/user/${userId}`
+
+	const userMain = await axios.get(mainDataUrl)
+	const userMainData = userMain.data.data
+
 	return userMainData
 }
 
 export const getActivityData = async (user) => {
-	// const activity = await axios.get('/userActivity.json')
-	const activity = await axios.get(activityDataUrl)
-	console.log('activity dans getActivityData :', activity.data)
-	const userActivityData = activity.data.find(({ userId }) => userId === parseInt(user))
-	console.log('userActivityData dans getActivityData :', userActivityData)
+	// Je précise l'url de l'API pour récupérer les données d'activité de l'utilisateur
+	let activityDataUrl = `http://localhost:3000/user/${user}/activity`
+
+	const userActivity = await axios.get(activityDataUrl)
+	const userActivityData = userActivity.data.data
+
 	return userActivityData
 }
 
 export const getSessionsData = async (user) => {
-	// const sessions = await axios.get('/userAverageSessions.json')
-	const sessions = await axios.get(sessionsDataUrl)
-	const userSessionsData = sessions.data.find(({ userId }) => userId === parseInt(user))
+	// Je précise l'url de l'API pour récupérer les données de sessions de l'utilisateur
+	let sessionsDataUrl = `http://localhost:3000/user/${user}/average-sessions`
+
+	const userSessions = await axios.get(sessionsDataUrl)
+	const userSessionsData = userSessions.data.data
+
 	return userSessionsData
 }
 
 export const getPerformanceData = async (user) => {
-	// const performance = await axios.get('/userPerformance.json')
-	const performance = await axios.get(performanceDataUrl)
-	const userPerformanceData = performance.data.find(({ userId }) => userId === parseInt(user))
+	// Je précise l'url de l'API pour récupérer les données de performance de l'utilisateur
+	let performanceDataUrl = `http://localhost:3000/user/${user}/performance`
+
+	const userPerformance = await axios.get(performanceDataUrl)
+	const userPerformanceData = userPerformance.data.data
+
 	return userPerformanceData
 }
