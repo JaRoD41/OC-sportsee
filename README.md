@@ -24,6 +24,32 @@ SportSee est une startup dédiée au coaching sportif. En pleine croissance, l�
   </a>
 </p>
 
+## 📚 Documentation / Maquette
+
+- [Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1&mode=dev)
+
+## 🚀 Installation Backend
+
+- Cloner le repo : `git clone https://github.com/JaRoD41/P9-back-end-dashboard.git`
+- Installer les dépendances : `yarn`
+- Lancer le serveur : `yarn dev`
+
+## 🚀 Installation Frontend
+
+- Cloner le repo : `git clone https://github.com/JaRoD41/OC-sportsee`
+- Installer les dépendances : `npm install`
+- Lancer le serveur : `npm start`
+
+## 📝 Cahier des charges
+
+- Utilisation de React
+- Utilisation de l'API fournie
+- Utilisation de la librairie graphique (D3, Recharts...)
+- Utilisation d'une résolution minimum de 1024x780
+- Utilisation de Sass (non obligatoire mais utilisée ici)
+- Utilisation de git et GitHub
+- Reproduction exacte de la maquette FIGMA fournie
+
 ## Livrables
 
 - Un document TXT contenant le lien vers le code GitHub
