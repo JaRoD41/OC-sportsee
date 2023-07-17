@@ -36,7 +36,7 @@ SportSee est une startup dédiée au coaching sportif. En pleine croissance, l�
 
 ## 🚀 Installation Frontend
 
-- Cloner le repo : `git clone https://github.com/JaRoD41/OC-sportsee`
+- Cloner le repo : `git clone https://github.com/JaRoD41/OC-sportsee.git`
 - Installer les dépendances : `npm install`
 - Lancer le serveur : `npm start`
 
