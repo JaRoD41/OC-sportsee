@@ -49,8 +49,15 @@ const Home = () => {
 
 			// Je mets à jour le state data avec les données récupérées
 			setData({ main, activity, sessions, performance })
+			const testData = new MainDataModel(main)
+			console.log('testData dans le composant:', testData.getFirstName())
 		}
 		fetchData()
+
+		// -----
+		
+
+		//-----
 		// Je vérifie que l'id de l'utilisateur est bien 12 ou 18
 		checkUserId(userId)
 		// Je vérifie que le state data est bien rempli

@@ -1,12 +1,9 @@
 export const getPerformanceDataValue = (data) => {
-	// Je vérifie que data est bien un objet
-	if (!Array.isArray(data.data)) {
-		console.error('Invalid data: data.data is not an array')
-		return []
-	}
 	let dataArray = []
 	let kind = data.kind
-	let dataValues = data.data
+
+	// Je vérifie que data est bien un objet
+	let dataValues = data.data || []
 	// Je crée un tableau d'objets avec les valeurs de data.data afin de pouvoir les utiliser dans le radar chart
 	for (let i = 0; i < dataValues.length; i++) {
 		dataArray.push({

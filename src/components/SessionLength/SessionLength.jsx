@@ -53,8 +53,8 @@ export default function SessionLength({ sessionLength }) {
 							y2="-1.97779"
 							gradientUnits="userSpaceOnUse"
 						>
-							<stop stop-color="white" />
-							<stop offset="0.810441" stop-color="white" stop-opacity="0.403191" />
+							<stop stopColor="white" />
+							<stop offset="0.810441" stopColor="white" stopOpacity="0.403191" />
 						</linearGradient>
 					</defs>
 					<XAxis dataKey="day" stroke="#ffffff81" padding={{ left: -15, right: -15 }} axisLine={false} tickLine={false} />
