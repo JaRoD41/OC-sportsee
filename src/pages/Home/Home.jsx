@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import MainDataModel from '../../services/MainDataModel'
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 import Dashboard from '../../components/Dashboard/Dashboard'
@@ -7,6 +8,7 @@ import { getMainData, getActivityData, getSessionsData, getPerformanceData } fro
 
 const Home = () => {
 	const { userId } = useParams()
+	const navigate = useNavigate()
 	// Je crée un state pour stocker les données de l'utilisateur sous forme d'objet
 	const [data, setData] = useState({
 		main: null,
@@ -27,6 +29,9 @@ const Home = () => {
 
 			// Je mets à jour le state data avec les données récupérées
 			setData({ main, activity, sessions, performance })
+			if (data === undefined) {
+				navigate('/404', { state: { message: "Can't get data" } }) //renvoi vers la page 404 en cas d'URL de logement invalide
+			}
 		}
 		fetchData()
 		// Je mets à jour le state data à chaque fois que l'userId change
@@ -34,20 +39,14 @@ const Home = () => {
 
 	// Je récupère les données principales de l'utilisateur en m'assurant que le state data.main est bien rempli
 
-	console.log('données userMainData avec getMainData() :', data.main)
-	console.log('activityData :', data.activity)
-	console.log('sessionsData :', data.sessions)
-	console.log('performanceData :', data.performance)
-
+	// const userMainData = data.main ? new MainDataModel(data.main) : null
+	console.log('data.main dans le composant:', data.main);
 	const firstName = data.main ? data.main.userInfos.firstName : ''
 	const userSessions = data.activity ? data.activity.sessions : []
 	const userNutritionData = data.main ? data.main.keyData : []
 	const todayScore = data.main ? data.main.todayScore : 0
 	const performanceDataAll = data.performance ? data.performance : []
 	const sessionLength = data.sessions ? data.sessions.sessions : []
-
-	console.log('performanceDataAll :', performanceDataAll)
-	console.log('sessionLength :', sessionLength)
 
 	return (
 		data && (

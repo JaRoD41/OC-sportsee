@@ -1,11 +1,12 @@
 @mixin font($size, $weight) {
-	font-size: $size;
-	font-style: normal;
-	font-weight: $weight;
+    font-size: $size;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    font-weight: $weight;
 }
 
 @mixin button-color($color) {
-	background-color: $color;
-	opacity: 0.1;
-	border: none;
+    background-color: $color;
+    opacity: 0.1;
+    border: none;
 }

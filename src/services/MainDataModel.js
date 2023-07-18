@@ -1,13 +1,13 @@
 export default class MainDataModel {
   constructor(data) {
-    this.id = data.id
+    this.firstName = this.userInfos.firstName
     this.userInfos = data.userInfos
     this.todayScore = data.todayScore
     this.keyData = data.keyData
   }
 
   getFirstName() {
-    return this.userInfos.firstName
+    return this.firstName
   }
 
   getTodayScore() {
