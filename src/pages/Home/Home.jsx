@@ -17,7 +17,7 @@ const Home = () => {
 	// Je crée une  fonction checkUserId qui vérifie que l'id de l'utilisateur est bien 12 ou 18
 	const checkUserId = (userId) => {
 		if (userId !== '12' && userId !== '18') {
-			navigate('/404', { state: { message: "Can't get data" } })
+			navigate('/404', { state: { message: "Invalid user Id" } })
 		}
 	}
 
