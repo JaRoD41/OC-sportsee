@@ -13,22 +13,22 @@ const Profile = () => {
 			<nav className="userSelection">
 				<h1 className="userSelection__title">Choix de l'utilisateur</h1>
 				<ul className="userSelection__list">
-					<li className="userSelection__list-item">
+					<li className="userSelection__list-item" onClick={() => navigate('/user/12')}>
 						<span className="userName">Karl</span>
 						<img
 							className="userSelection__list-item__btn"
 							src={logo}
 							alt="user logo"
-							onClick={() => navigate('/user/12')}
+							// onClick={() => navigate('/user/12')}
 						/>
 					</li>
-					<li className="userSelection__list-item">
+					<li className="userSelection__list-item" onClick={() => navigate('/user/18')}>
 						<span className="userName">Cecilia</span>
 						<img
 							src={logo}
 							alt="user logo"
 							className="userSelection__list-item__btn"
-							onClick={() => navigate('/user/18')}
+							// onClick={() => navigate('/user/18')}
 						/>
 					</li>
 				</ul>

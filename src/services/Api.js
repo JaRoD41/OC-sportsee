@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 export const getMainData = async (user) => {
 	// Je précise l'url de l'API pour récupérer les données principales de l'utilisateur
 	let mainDataUrl = `http://localhost:3000/user/${user}`
@@ -46,3 +47,4 @@ export const getPerformanceData = async (user) => {
 
 	return userPerformanceData
 }
+

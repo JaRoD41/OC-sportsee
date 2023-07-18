@@ -7,8 +7,28 @@ import Dashboard from '../../components/Dashboard/Dashboard'
 import { getMainData, getActivityData, getSessionsData, getPerformanceData } from '../../services/Api'
 
 const Home = () => {
+	// Je récupère l'id de l'utilisateur dans l'url
 	const { userId } = useParams()
+	console.log('userId dans le composant:', userId)
+
+	// Je crée une constante navigate qui me permet de naviguer vers une autre page
 	const navigate = useNavigate()
+	
+	// Je crée une  fonction checkUserId qui vérifie que l'id de l'utilisateur est bien 12 ou 18
+	const checkUserId = (userId) => {
+		if (userId !== '12' && userId !== '18') {
+			navigate('/404', { state: { message: "Can't get data" } })
+		}
+	}
+
+	// Je crée une fonction qui vérifie que le state data est bien rempli
+	const checkData = (data) => {
+		if (!data) {
+			navigate('/404', { state: { message: "Can't get data" } })
+		}
+	}
+
+
 	// Je crée un state pour stocker les données de l'utilisateur sous forme d'objet
 	const [data, setData] = useState({
 		main: null,
@@ -29,18 +49,19 @@ const Home = () => {
 
 			// Je mets à jour le state data avec les données récupérées
 			setData({ main, activity, sessions, performance })
-			if (data === undefined) {
-				navigate('/404', { state: { message: "Can't get data" } }) //renvoi vers la page 404 en cas d'URL de logement invalide
-			}
 		}
 		fetchData()
-		// Je mets à jour le state data à chaque fois que l'userId change
-	}, [userId])
-
-	// Je récupère les données principales de l'utilisateur en m'assurant que le state data.main est bien rempli
+		// Je vérifie que l'id de l'utilisateur est bien 12 ou 18
+		checkUserId(userId)
+		// Je vérifie que le state data est bien rempli
+		checkData(data)
+		// eslint-disable-next-line
+	}, [])
 
 	// const userMainData = data.main ? new MainDataModel(data.main) : null
-	console.log('data.main dans le composant:', data.main);
+	console.log('data.main dans le composant:', data.main)
+
+	// Je récupère les données principales de l'utilisateur en m'assurant que le state data.main est bien rempli
 	const firstName = data.main ? data.main.userInfos.firstName : ''
 	const userSessions = data.activity ? data.activity.sessions : []
 	const userNutritionData = data.main ? data.main.keyData : []
