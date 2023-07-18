@@ -4,7 +4,7 @@ import MainDataModel from '../../services/MainDataModel'
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 import Dashboard from '../../components/Dashboard/Dashboard'
-import { getMainData, getActivityData, getSessionsData, getPerformanceData } from '../../services/Mock'
+import { getMainData, getActivityData, getSessionsData, getPerformanceData } from '../../services/Api'
 
 const Home = () => {
 	// Je récupère l'id de l'utilisateur dans l'url
@@ -13,11 +13,11 @@ const Home = () => {
 
 	// Je crée une constante navigate qui me permet de naviguer vers une autre page
 	const navigate = useNavigate()
-	
+
 	// Je crée une  fonction checkUserId qui vérifie que l'id de l'utilisateur est bien 12 ou 18
 	const checkUserId = (userId) => {
 		if (userId !== '12' && userId !== '18') {
-			navigate('/404', { state: { message: "Invalid user Id" } })
+			navigate('/404', { state: { message: 'Invalid user Id' } })
 		}
 	}
 
@@ -27,7 +27,6 @@ const Home = () => {
 			navigate('/404', { state: { message: "Can't get data" } })
 		}
 	}
-
 
 	// Je crée un state pour stocker les données de l'utilisateur sous forme d'objet
 	const [data, setData] = useState({
@@ -54,19 +53,12 @@ const Home = () => {
 		}
 		fetchData()
 
-		// -----
-		
-
-		//-----
 		// Je vérifie que l'id de l'utilisateur est bien 12 ou 18
 		checkUserId(userId)
 		// Je vérifie que le state data est bien rempli
 		checkData(data)
 		// eslint-disable-next-line
 	}, [])
-
-	// const userMainData = data.main ? new MainDataModel(data.main) : null
-	console.log('data.main dans le composant:', data.main)
 
 	// Je récupère les données principales de l'utilisateur en m'assurant que le state data.main est bien rempli
 	const firstName = data.main ? data.main.userInfos.firstName : ''
