@@ -4,7 +4,7 @@ import MainDataModel from '../../services/MainDataModel'
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 import Dashboard from '../../components/Dashboard/Dashboard'
-import { getMainData, getActivityData, getSessionsData, getPerformanceData } from '../../services/Api'
+import { getMainData, getActivityData, getSessionsData, getPerformanceData } from '../../services/Mock'
 
 const Home = () => {
 	// Je récupère l'id de l'utilisateur dans l'url

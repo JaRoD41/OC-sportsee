@@ -1,18 +1,10 @@
 import axios from 'axios'
 
-
 export const getMainData = async (user) => {
 	// Je précise l'url de l'API pour récupérer les données principales de l'utilisateur
 	let mainDataUrl = `http://localhost:3000/user/${user}`
-	// let mainDataUrl = '/userMainData.json'
 
 	const userMain = await axios.get(mainDataUrl)
-
-	// Test 
-	// const userMainData = (mainDataUrl = `http://localhost:3000/user/${user}`
-	// 	? userMain.data.data
-	// 	: userMain.data.find(({ id }) => id === parseInt(user)))
-
 	const userMainData = userMain.data.data
 
 	return userMainData
@@ -47,4 +39,3 @@ export const getPerformanceData = async (user) => {
 
 	return userPerformanceData
 }
-

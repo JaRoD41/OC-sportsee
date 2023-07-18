@@ -5,7 +5,6 @@ export const getMainData = async (user) => {
 	let mainDataUrl = '/userMainData.json'
 
 	const userMain = await axios.get(mainDataUrl)
-
 	const userMainData = userMain.data.find(({ id }) => id === parseInt(user))
 
 	return userMainData
