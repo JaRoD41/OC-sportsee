@@ -1,4 +1,8 @@
 import axios from 'axios'
+import MainDataModel from './MainDataModel'
+import ActivityModel from './ActivityModel'
+import SessionsModel from './SessionsModel'
+import PerformanceModel from './PerformanceModel'
 
 export const getMainData = async (user) => {
 	// Je précise l'url de l'API pour récupérer les données principales de l'utilisateur
@@ -6,10 +10,10 @@ export const getMainData = async (user) => {
 
 	try {
 		const userMain = await axios.get(mainDataUrl)
-		const userMainData = userMain.data.data
-
+		const userMainData = new MainDataModel(userMain.data.data)
 		return userMainData
 	} catch (error) {
+		// Je gère les erreurs
 		console.log(error)
 	}
 }
@@ -20,8 +24,7 @@ export const getActivityData = async (user) => {
 
 	try {
 		const userActivity = await axios.get(activityDataUrl)
-		const userActivityData = userActivity.data.data
-
+		const userActivityData = new ActivityModel(userActivity.data.data)
 		return userActivityData
 	} catch (error) {
 		console.log(error)
@@ -34,8 +37,7 @@ export const getSessionsData = async (user) => {
 
 	try {
 		const userSessions = await axios.get(sessionsDataUrl)
-		const userSessionsData = userSessions.data.data
-
+		const userSessionsData = new SessionsModel(userSessions.data.data)
 		return userSessionsData
 	} catch (error) {
 		console.log(error)
@@ -48,8 +50,8 @@ export const getPerformanceData = async (user) => {
 
 	try {
 		const userPerformance = await axios.get(performanceDataUrl)
-		const userPerformanceData = userPerformance.data.data
 
+		const userPerformanceData = new PerformanceModel(userPerformance.data.data)
 		return userPerformanceData
 	} catch (error) {
 		console.log(error)

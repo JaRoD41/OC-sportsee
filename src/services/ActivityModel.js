@@ -13,13 +13,13 @@ export default class ActivityModel {
 		return dates
 	}
 
-	getKilogram() {
-		return this.sessions.map((session) => session.kilogram)
-	}
+	// getKilogram() {
+	// 	return this.sessions.map((session) => session.kilogram)
+	// }
 
-	getCalories() {
-		return this.sessions.map((session) => session.calories)
-	}
+	// getCalories() {
+	// 	return this.sessions.map((session) => session.calories)
+	// }
 }
 
 export const monthTickFormatter = (tick) => {

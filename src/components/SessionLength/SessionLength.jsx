@@ -28,7 +28,6 @@ const renderLegend = () => {
 export default function SessionLength({ sessionLength }) {
 	// Je récupère les données de sessionLength et je les formate avec ma fonction getWeekDays() pour pouvoir les utiliser dans le graphique
 	const formatedSessions = getWeekDays(sessionLength)
-	console.log('formatedSessions dans le composant:', formatedSessions);
 	return (
 		<div className="session-container">
 			<ResponsiveContainer width="100%" height="100%">

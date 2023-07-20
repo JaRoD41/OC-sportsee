@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import MainDataModel from '../../services/MainDataModel'
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 import Dashboard from '../../components/Dashboard/Dashboard'
@@ -9,7 +8,6 @@ import { getMainData, getActivityData, getSessionsData, getPerformanceData } fro
 const Home = () => {
 	// Je récupère l'id de l'utilisateur dans l'url
 	const { userId } = useParams()
-	console.log('userId dans le composant:', userId)
 
 	// Je crée une constante navigate qui me permet de naviguer vers une autre page
 	const navigate = useNavigate()
@@ -21,7 +19,7 @@ const Home = () => {
 		}
 	}
 
-	// Je crée une fonction qui vérifie que le state data est bien rempli
+	// Je crée une fonction qui vérifie que le state data est bien rempli et donc que les données de l'utilisateur ont bien été récupérées par Axios
 	const checkData = (data) => {
 		if (!data) {
 			navigate('/404', { state: { message: "Can't get data" } })
@@ -48,8 +46,6 @@ const Home = () => {
 
 			// Je mets à jour le state data avec les données récupérées
 			setData({ main, activity, sessions, performance })
-			// const testData = new MainDataModel(main)
-			// console.log('testData dans le composant:', testData.getFirstName())
 		}
 		fetchData()
 
@@ -60,13 +56,14 @@ const Home = () => {
 		// eslint-disable-next-line
 	}, [])
 
-	// Je récupère les données principales de l'utilisateur en m'assurant que le state data.main est bien rempli
-	const firstName = data.main ? data.main.userInfos.firstName : ''
-	const userSessions = data.activity ? data.activity.sessions : []
-	const userNutritionData = data.main ? data.main.keyData : []
-	const todayScore = data.main ? data.main.todayScore : 0
-	const performanceDataAll = data.performance ? data.performance : []
-	const sessionLength = data.sessions ? data.sessions.sessions : []
+	// Je récupère les données principales de l'utilisateur en m'assurant que le state data.main est bien rempli et en utilisant les méthodes des classes de modélisation créees pour cela
+
+	const firstName = data.main ? data.main.getFirstName() : ''
+	const userNutritionData = data.main ? data.main.getKeyData() : []
+	const todayScore = data.main ? data.main.getTodayScore() : 0
+	const userActivity = data.activity ? data.activity.getSessions() : []
+	const sessionLength = data.sessions ? data.sessions.getSessions() : []
+	const performanceDataAll = data.performance ? data.performance.getData() : []
 
 	return (
 		data && (
@@ -76,7 +73,7 @@ const Home = () => {
 				<Dashboard
 					userId={userId}
 					user={firstName}
-					sessions={userSessions}
+					sessions={userActivity}
 					nutritionData={userNutritionData}
 					todayScore={todayScore}
 					performanceData={performanceDataAll}

@@ -1,21 +1,29 @@
+export default class PerformanceModel {
+	constructor(data) {
+		this.data = data.data
+	}
+
+	getData() {
+		return this.data
+	}
+}
+
+// Je crée une fonction getPerformanceDataValue qui va me permettre de récupérer les valeurs de data.kind et data.value afin de pouvoir les utiliser dans le radar chart
 export const getPerformanceDataValue = (data) => {
 	let dataArray = []
-	let kind = data.kind
 
-	// Je vérifie que data est bien un objet
-	let dataValues = data.data || []
-	// Je crée un tableau d'objets avec les valeurs de data.data afin de pouvoir les utiliser dans le radar chart
-	for (let i = 0; i < dataValues.length; i++) {
+	for (let i = 0; i < data.length; i++) {
 		dataArray.push({
-			kind: kind[dataValues[i].kind],
-			A: dataValues[i].value,
+			kind: data[i].kind,
+			A: data[i].value,
 		})
 	}
-	// Je récupère la valeur maximale de data.data afin de pouvoir l'utiliser dans le radar chart
+
+	// Je récupère la valeur maximale de data.value afin de pouvoir l'utiliser dans le radar chart
 	let maxDataValue = Math.max(...dataArray.map((item) => item.A))
-	for (let i = 0; i < dataArray.length; i++) {
-		// Je crée une nouvelle propriété fullMark dans chaque objet de dataArray afin de pouvoir l'utiliser dans le radar chart
-		dataArray[i].fullMark = maxDataValue
+	for (let j = 0; j < dataArray.length; j++) {
+		// Je crée une nouvelle propriété fullMark dans chaque objet de dataArray afin de pouvoir y stocker la valeur maximale de data.value
+		dataArray[j].fullMark = maxDataValue
 	}
 	return dataArray
 }

@@ -15,7 +15,6 @@ const CustomTooltip = ({ active, payload }) => {
 }
 
 export default function DailyActivity({ sessions }) {
-	console.log('sessions dans le composant:', sessions);
 	return (
 		<div className="activity-container">
 			<h2 className="chartHeader__title">Activité quotidienne</h2>
@@ -32,13 +31,7 @@ export default function DailyActivity({ sessions }) {
 					}}
 				>
 					<CartesianGrid strokeDasharray="3 3" stroke="#dedede" vertical={false} />
-					<XAxis
-						dataKey="day"
-						tickFormatter={monthTickFormatter}
-						stroke="#9B9EAC"
-						tickLine={false}
-						dy={10}
-					/>
+					<XAxis dataKey="day" tickFormatter={monthTickFormatter} stroke="#9B9EAC" tickLine={false} dy={10} />
 					<YAxis yAxisId="left" orientation="left" stroke="#8884d8" hide={true} />
 					<YAxis
 						yAxisId="right"
@@ -51,11 +44,7 @@ export default function DailyActivity({ sessions }) {
 						dx={15}
 						dy={-4}
 					/>
-					<Tooltip
-						allowEscapeViewBox={{ x: true, y: true }}
-						content={<CustomTooltip />}
-						
-					/>
+					<Tooltip allowEscapeViewBox={{ x: true, y: true }} content={<CustomTooltip />} />
 					<Legend
 						verticalAlign="top"
 						align="right"
