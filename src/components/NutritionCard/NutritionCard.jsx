@@ -3,6 +3,7 @@ import protein from '../../assets/protein-icon.svg'
 import glucid from '../../assets/glucid-icon.svg'
 import lipid from '../../assets/lipid-icon.svg'
 
+// Je crée un objet TYPES qui contient les propriétés color, unit, typeName et icon qui seront utilisées dans NutritionCard.jsx
 const TYPES = {
 	calorieCount: { color: 'red', unit: 'kCal', typeName: 'Calories', icon: calory },
 	proteinCount: { color: 'blue', unit: 'g', typeName: 'Protéines', icon: protein },

@@ -6,6 +6,7 @@ import weight from '../../assets/weight-icon.svg'
 
 export default function ActivityButton({ activity }) {
 	let activityIcon
+	// Je crée une condition pour afficher l'icône correspondant à l'activité
 	if (activity === 'zen') {
 		activityIcon = zen
 	} else if (activity === 'swim') {
