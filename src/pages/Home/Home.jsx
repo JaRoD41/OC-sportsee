@@ -58,7 +58,6 @@ const Home = () => {
 
 	// Je récupère les données principales de l'utilisateur en m'assurant que le state data.main est bien rempli et en utilisant les méthodes des classes de modélisation créees pour cela
 
-	console.log('data main avec Mock :', data.main);
 	const firstName = data.main ? data.main.getFirstName() : ''
 	const userNutritionData = data.main ? data.main.getKeyData() : []
 	const todayScore = data.main ? data.main.getTodayScore() : 0
