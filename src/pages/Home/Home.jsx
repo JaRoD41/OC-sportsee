@@ -66,6 +66,7 @@ const Home = () => {
 	const performanceDataAll = data.performance ? data.performance.getData() : []
 
 	return (
+		// Je vérifie que le state data est bien rempli et je passe les données de l'utilisateur en props aux composants Dashboard, HorizontalNav et VerticalNav
 		data && (
 			<>
 				<HorizontalNav />

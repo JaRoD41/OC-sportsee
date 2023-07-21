@@ -1,9 +1,11 @@
-import React from 'react'
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts'
 
 export default function Score({ todayScore }) {
+	// Je crée une constante scoreAngle qui me permet de calculer l'angle du score du jour à afficher dans le graphique radial
 	const scoreAngle = parseInt(todayScore * 360 + 90)
 	const scoreValue = parseInt(todayScore * 100)
+
+	// Je crée un tableau data qui contient les données à afficher et la couleur dans le graphique radial
 	const data = [
 		{
 			todayScore: scoreAngle,

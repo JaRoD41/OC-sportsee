@@ -12,14 +12,6 @@ export default class ActivityModel {
 		const dates = this.sessions.map((session) => session.day)
 		return dates
 	}
-
-	// getKilogram() {
-	// 	return this.sessions.map((session) => session.kilogram)
-	// }
-
-	// getCalories() {
-	// 	return this.sessions.map((session) => session.calories)
-	// }
 }
 
 export const monthTickFormatter = (tick) => {
@@ -27,4 +19,3 @@ export const monthTickFormatter = (tick) => {
 
 	return date.getDate()
 }
-

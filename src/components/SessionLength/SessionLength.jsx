@@ -1,4 +1,3 @@
-import React from 'react'
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Rectangle } from 'recharts'
 import { getWeekDays } from '../../services/SessionsModel'
 
@@ -42,7 +41,7 @@ export default function SessionLength({ sessionLength }) {
 						bottom: 5,
 					}}
 				>
-				{/* Je crée un dégradé pour la ligne du graphique */}
+					{/* Je crée un dégradé pour la ligne du graphique */}
 					<defs>
 						<linearGradient
 							id="paint0_linear_2_122"
@@ -56,7 +55,13 @@ export default function SessionLength({ sessionLength }) {
 							<stop offset="0.810441" stopColor="white" stopOpacity="0.403191" />
 						</linearGradient>
 					</defs>
-					<XAxis dataKey="day" stroke="#ffffff81" padding={{ left: -15, right: -15 }} axisLine={false} tickLine={false} />
+					<XAxis
+						dataKey="day"
+						stroke="#ffffff81"
+						padding={{ left: -15, right: -15 }}
+						axisLine={false}
+						tickLine={false}
+					/>
 					<YAxis type="number" domain={['dataMin - 10', 'dataMax']} padding={{ top: 80, bottom: 15 }} hide={true} />
 					<Tooltip content={<CustomTooltipSessions />} cursor={<CustomizedCursor />} />
 					<Legend content={renderLegend} />

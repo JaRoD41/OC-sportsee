@@ -1,4 +1,3 @@
-import React from 'react'
 import zen from '../../assets/zen-icon.svg'
 import swim from '../../assets/swim-icon.svg'
 import bike from '../../assets/bike-icon.svg'

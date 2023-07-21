@@ -3,7 +3,7 @@ import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 
 const Error = () => {
 	return (
-		<div className='errorPage-container'>
+		<div className="errorPage-container">
 			<HorizontalNav />
 			<VerticalNav />
 

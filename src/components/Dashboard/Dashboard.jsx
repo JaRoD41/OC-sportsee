@@ -1,5 +1,3 @@
-import React from 'react'
-
 import ChartsZone from '../../components/ChartsZone/ChartsZone'
 import NutritionZone from '../../components/NutritionZone/NutritionZone'
 

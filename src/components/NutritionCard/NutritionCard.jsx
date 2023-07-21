@@ -13,6 +13,7 @@ const TYPES = {
 
 // Je récupère les props type et amount de NutritionZone.jsx
 export default function NutritionCard({ type, amount }) {
+	// Je crée une constante nutritionType qui récupère les propriétés de TYPES en fonction du type de nutrition
 	const nutritionType = TYPES[type]
 
 	return (

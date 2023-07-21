@@ -18,20 +18,4 @@ export default class MainDataModel {
 	getKeyData() {
 		return this.keyData
 	}
-
-	// getCalorieCount() {
-	// 	return this.keyData.calorieCount
-	// }
-
-	// getProteinCount() {
-	// 	return this.keyData.proteinCount
-	// }
-
-	// getCarbohydrateCount() {
-	// 	return this.keyData.carbohydrateCount
-	// }
-
-	// getLipidCount() {
-	// 	return this.keyData.lipidCount
-	// }
 }
