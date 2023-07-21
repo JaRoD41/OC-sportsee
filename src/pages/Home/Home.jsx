@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 import Dashboard from '../../components/Dashboard/Dashboard'
-import { getMainData, getActivityData, getSessionsData, getPerformanceData } from '../../services/Mock'
+import { getMainData, getActivityData, getSessionsData, getPerformanceData } from '../../services/Api'
 
 const Home = () => {
 	// Je récupère l'id de l'utilisateur dans l'url

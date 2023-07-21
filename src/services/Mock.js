@@ -5,30 +5,19 @@ import SessionsModel from './SessionsModel'
 import PerformanceModel from './PerformanceModel'
 
 export const getMainData = async (user) => {
-	// Je précise l'url du fichier JSON pour récupérer les données principales de l'utilisateur
+	// Je précise l'url du fichier JSON pour récupérer les données principales mockées de l'utilisateur
 	let mainDataUrl = '/userMainData.json'
 
 	try {
 		const userMain = await axios.get(mainDataUrl)
+		// Je filtre les données pour récupérer les données de l'utilisateur dont l'id correspond à l'id de l'utilisateur passé en paramètre
 		const userMainFilter = userMain.data.find(({ id }) => id === parseInt(user))
-		
-			const userMainData = new MainDataModel(userMainFilter)
-			console.log('userMainFilter :', userMainFilter);
-			console.log('userMainData :', userMainData)
+		const userMainData = new MainDataModel(userMainFilter)
+
 		return userMainData
 	} catch (error) {
 		console.log(error)
 	}
-	// try {
-	// 	const userMain = await axios.get(mainDataUrl)
-	// 	const userMainTest = new MainDataModel(userMain.data.data)
-	// 	console.log('userMain :', userMain);
-	// 	const userMainData = userMainTest.find(({ id }) => id === parseInt(user))
-	// 	return userMainData
-	// } catch (error) {
-	// 	// Je gère les erreurs
-	// 	console.log(error)
-	// }
 }
 
 export const getActivityData = async (user) => {
@@ -36,21 +25,14 @@ export const getActivityData = async (user) => {
 	let activityDataUrl = '/userActivity.json'
 
 	try {
-	const userActivity = await axios.get(activityDataUrl)
-	const userActivityFilter = userActivity.data.find(({ userId }) => userId === parseInt(user))
-	const userActivityData = new ActivityModel(userActivityFilter)
+		const userActivity = await axios.get(activityDataUrl)
+		const userActivityFilter = userActivity.data.find(({ userId }) => userId === parseInt(user))
+		const userActivityData = new ActivityModel(userActivityFilter)
 
-	return userActivityData
+		return userActivityData
 	} catch (error) {
-	console.log(error)
+		console.log(error)
 	}
-	// try {
-	// 	const userActivity = await axios.get(activityDataUrl)
-	// 	const userActivityData = new ActivityModel(userActivity.data.data)
-	// 	return userActivityData
-	// } catch (error) {
-	// 	console.log(error)
-	// }
 }
 
 export const getSessionsData = async (user) => {
@@ -66,13 +48,6 @@ export const getSessionsData = async (user) => {
 	} catch (error) {
 		console.log(error)
 	}
-	// try {
-	// 	const userSessions = await axios.get(sessionsDataUrl)
-	// 	const userSessionsData = new SessionsModel(userSessions.data.data)
-	// 	return userSessionsData
-	// } catch (error) {
-	// 	console.log(error)
-	// }
 }
 
 export const getPerformanceData = async (user) => {
@@ -88,12 +63,4 @@ export const getPerformanceData = async (user) => {
 	} catch (error) {
 		console.log(error)
 	}
-	// try {
-	// 	const userPerformance = await axios.get(performanceDataUrl)
-
-	// 	const userPerformanceData = new PerformanceModel(userPerformance.data.data)
-	// 	return userPerformanceData
-	// } catch (error) {
-	// 	console.log(error)
-	// }
 }
