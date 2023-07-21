@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 import Dashboard from '../../components/Dashboard/Dashboard'
-import { getMainData, getActivityData, getSessionsData, getPerformanceData } from '../../services/Api'
+import { getMainData, getActivityData, getSessionsData, getPerformanceData } from '../../services/Mock'
 
 const Home = () => {
 	// Je récupère l'id de l'utilisateur dans l'url
@@ -58,6 +58,7 @@ const Home = () => {
 
 	// Je récupère les données principales de l'utilisateur en m'assurant que le state data.main est bien rempli et en utilisant les méthodes des classes de modélisation créees pour cela
 
+	console.log('data main avec Mock :', data.main);
 	const firstName = data.main ? data.main.getFirstName() : ''
 	const userNutritionData = data.main ? data.main.getKeyData() : []
 	const todayScore = data.main ? data.main.getTodayScore() : 0
