@@ -1,6 +1,7 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import { monthTickFormatter } from '../../services/ActivityModel'
 
+// Je crée un composant CustomTooltip qui va afficher les données personnalisées de la barre survolée
 const CustomTooltip = ({ active, payload }) => {
 	if (active && payload) {
 		return (
