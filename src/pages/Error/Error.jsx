@@ -1,6 +1,7 @@
 import VerticalNav from '../../components/VerticalNav/VerticalNav'
 import HorizontalNav from '../../components/HorizontalNav/HorizontalNav'
 
+// Je crée une page d'erreur qui s'affiche si la page n'existe pas
 const Error = () => {
 	return (
 		<div className="errorPage-container">
