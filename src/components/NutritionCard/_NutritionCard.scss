@@ -23,6 +23,7 @@
 
     &:hover {
         cursor: pointer;
+        // J'utilise les variables CSS pour les couleurs de hover et de box-shadow
         -webkit-box-shadow: 0px 0px 25px 0px var(--hover-color);
         -moz-box-shadow: 0px 0px 25px 0px var(--hover-color);
         box-shadow: 0px 0px 25px 0px var(--hover-color);
