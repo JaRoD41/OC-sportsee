@@ -6,7 +6,8 @@ export default function HorizontalNavLinks() {
 	return (
 		<nav className="horizontal_links">
 			{horizontal_links.map((link, index) => (
-				<Link key={index} to="/user/:userId">
+				// Je crée un lien pour chaque élément de la Navigation horizontale et je précise que le lien Accueil renvoie vers la page d'accueil
+				<Link key={index} to={link === 'Accueil' ? '/' : '/user/:userId'}>
 					{link}
 				</Link>
 			))}
