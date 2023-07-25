@@ -11,10 +11,10 @@
 }
 
 .copyright {
-	display: flex;
-	color: white;
-	white-space: nowrap;
-	@include font(0.75rem, 500);
-	margin-bottom: 6.5rem;
-	transform: rotate(-90deg);
+    display: flex;
+    color: white;
+    white-space: nowrap;
+    @include font(0.75rem, 500);
+    margin-bottom: 6.5rem;
+    transform: rotate(-90deg);
 }

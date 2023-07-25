@@ -1,22 +1,23 @@
 .horizontal_links {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	width: 69%;
-	height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 69%;
+    height: 24px;
     margin-right: 6%;
 
-	& a {
-		@include font(1.5rem, 500);
-		color: white;
-		text-decoration: none;
-		&:hover {
-			color: $primary-color;
-		}
+    & a {
+        @include font(1.5rem, 500);
+        color: white;
+        text-decoration: none;
 
-		@media screen and ($breakpoint-desktop <= width <= 1280px) {
-			@include font(1rem, 400);
-		}
-	}
+        &:hover {
+            color: $primary-color;
+        }
+
+        @media screen and ($breakpoint-desktop <=width <=1280px) {
+            @include font(1rem, 400);
+        }
+    }
 }
