@@ -1,6 +1,5 @@
 export default class ActivityModel {
 	constructor(data) {
-		// this.userId = data.userId
 		this.sessions = data.sessions
 	}
 
@@ -14,6 +13,7 @@ export default class ActivityModel {
 	}
 }
 
+// Je crée une fonction qui va formatter les dates en fonction du format que je souhaite pour le graphique
 export const monthTickFormatter = (tick) => {
 	const date = new Date(tick)
 

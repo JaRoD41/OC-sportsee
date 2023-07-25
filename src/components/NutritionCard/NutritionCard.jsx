@@ -3,14 +3,7 @@ import protein from '../../assets/protein-icon.svg'
 import glucid from '../../assets/glucid-icon.svg'
 import lipid from '../../assets/lipid-icon.svg'
 
-// Je crée un objet TYPES qui contient les propriétés color, unit, typeName et icon qui seront utilisées dans NutritionCard.jsx
-// const TYPES = {
-// 	calorieCount: { color: 'red', unit: 'kCal', typeName: 'Calories', icon: calory },
-// 	proteinCount: { color: 'blue', unit: 'g', typeName: 'Protéines', icon: protein },
-// 	carbohydrateCount: { color: 'yellow', unit: 'g', typeName: 'Glucides', icon: glucid },
-// 	lipidCount: { color: 'pink', unit: 'g', typeName: 'Lipides', icon: lipid },
-// }
-
+// Je crée un objet qui contient les propriétés de chaque type de nutrition
 const TYPES = {
 	calorieCount: { color: 'red', unit: 'kCal', typeName: 'Calories', icon: calory, hoverColor: 'rgba(255, 0, 0, 0.4)' },
 	proteinCount: {
