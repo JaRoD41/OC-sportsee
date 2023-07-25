@@ -49,6 +49,7 @@ SportSee est une startup dédiée au coaching sportif. En pleine croissance, l�
 - Utilisation d'une résolution minimum de 1024x780
 - Utilisation de Sass (non obligatoire mais utilisée ici)
 - Utilisation de git et GitHub
+- Utilisation de Notion pour le suivi Agile du projet
 - Reproduction exacte de la maquette FIGMA fournie
 
 ## Livrables
