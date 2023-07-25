@@ -27,6 +27,7 @@ SportSee est une startup dédiée au coaching sportif. En pleine croissance, l�
 ## 📚 Documentation / Maquette
 
 - [Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1&mode=dev)
+- [Notion](https://openclassrooms.notion.site/Tableau-de-bord-SportSee-6686aa4b5f44417881a4884c9af5669e)
 
 ## 🚀 Installation Backend
 
