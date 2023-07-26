@@ -5,16 +5,21 @@ import SessionsModel from './SessionsModel'
 import PerformanceModel from './PerformanceModel'
 
 export const getMainData = async (user) => {
+	let errorCode = null
 	// Je précise l'url de l'API pour récupérer les données principales de l'utilisateur
 	let mainDataUrl = `http://localhost:3000/user/${user}`
 
 	try {
 		const userMain = await axios.get(mainDataUrl)
 		const userMainData = new MainDataModel(userMain.data.data)
-		return userMainData
+		// Je retourne un objet avec les données de l'utilisateur et le code d'erreur
+		return { data: userMainData, errorCode }
 	} catch (error) {
-		// Je gère les erreurs
-		console.log(error)
+		if (error.code === 'ERR_NETWORK') {
+			errorCode = error.code
+			console.log('problème API, code :', errorCode)
+		}
+		return { data: null, errorCode }
 	}
 }
 

@@ -37,15 +37,25 @@ const Home = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			// Je récupère les données principales de l'utilisateur en utilisant Promise.all() pour exécuter plusieurs requêtes en parallèle
-			const [main, activity, sessions, performance] = await Promise.all([
+			const [mainResponse, activity, sessions, performance] = await Promise.all([
 				getMainData(userId),
 				getActivityData(userId),
 				getSessionsData(userId),
 				getPerformanceData(userId),
 			])
 
+			// Je vérifie si le code d'erreur est 'ERR_NETWORK'
+			if (mainResponse.errorCode === 'ERR_NETWORK') {
+				navigate('/404', { state: { message: "Can't connect to API" } })
+			}
+
 			// Je mets à jour le state data avec les données récupérées
-			setData({ main, activity, sessions, performance })
+			setData({
+				main: mainResponse.data,
+				activity,
+				sessions,
+				performance,
+			})
 		}
 		fetchData()
 
