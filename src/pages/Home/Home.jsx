@@ -15,6 +15,7 @@ const Home = () => {
 	// Je crée une  fonction checkUserId qui vérifie que l'id de l'utilisateur est bien 12 ou 18
 	const checkUserId = (userId) => {
 		if (userId !== '12' && userId !== '18') {
+			// Si l'id de l'utilisateur n'est pas 12 ou 18, je navigue vers la page d'erreur en passant un message d'erreur dans le state
 			navigate('/404', { state: { message: 'Invalid user Id' } })
 		}
 	}
@@ -22,6 +23,7 @@ const Home = () => {
 	// Je crée une fonction qui vérifie que le state data est bien rempli et donc que les données de l'utilisateur ont bien été récupérées par Axios
 	const checkData = (data) => {
 		if (!data) {
+			// Si le state data est vide, je navigue vers la page d'erreur en passant un message d'erreur dans le state
 			navigate('/404', { state: { message: "Can't get data" } })
 		}
 	}
@@ -46,7 +48,8 @@ const Home = () => {
 
 			// Je vérifie si le code d'erreur est 'ERR_NETWORK'
 			if (mainResponse.errorCode === 'ERR_NETWORK') {
-				navigate('/404', { state: { message: "Can't connect to API" } })
+				// Si oui, je navigue vers la page d'erreur en passant un message d'erreur dans le state
+				navigate('/404', { state: { message: "API_ERROR" } })
 			}
 
 			// Je mets à jour le state data avec les données récupérées
