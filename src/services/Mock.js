@@ -5,6 +5,7 @@ import SessionsModel from './SessionsModel'
 import PerformanceModel from './PerformanceModel'
 
 export const getMainData = async (user) => {
+	let errorCode = null
 	// Je précise l'url du fichier JSON pour récupérer les données principales mockées de l'utilisateur
 	let mainDataUrl = '/userMainData.json'
 
@@ -14,9 +15,13 @@ export const getMainData = async (user) => {
 		const userMainFilter = userMain.data.find(({ id }) => id === parseInt(user))
 		const userMainData = new MainDataModel(userMainFilter)
 
-		return userMainData
+		return { data: userMainData, errorCode }
 	} catch (error) {
-		console.log(error)
+		if (error.code === 'ERR_NETWORK') {
+			errorCode = error.code
+			console.log('problème API, code :', errorCode)
+		}
+		return { data: null, errorCode }
 	}
 }
 
